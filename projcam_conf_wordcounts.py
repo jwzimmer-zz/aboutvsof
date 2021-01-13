@@ -81,9 +81,9 @@ class ComparisonBetween():
         #print(pccdf.head())
         #print(comparedf.head())
         newdf = df.append(pccdf,ignore_index=True)
-        newnewdf = newdf.append(comparedf,ignore_index=True)
+        #newnewdf = newdf.append(comparedf,ignore_index=True)
         #print(newnewdf.head())
-        return newnewdf
+        return newdf
     
 def get_simple_test_set():
     
@@ -104,52 +104,10 @@ def get_simple_test_set():
     testit = ComparisonBetween(test_pc,pc_txt,test_ted,ted_txt)
     #testit.df has all the test data in it
 
-    train, val = train_test_split(doit.df, test_size=0.2, random_state=42)
-    #print(train)
-
-    vectorizer = CountVectorizer(stop_words="english", max_features=10000)
-    X_train = vectorizer.fit_transform(train["Body"])
-    Y_train = train["Class"]
+    vectorizer = CountVectorizer(stop_words="english", max_features=100000)
+    X_train = vectorizer.fit_transform(doit.df["Body"])
     train_vocab = vectorizer.get_feature_names()
-    #print(train_vocab)
-    
-    #print([x for x in doit.df["Class"] if x not in (1,0)])
-#=============================================================================
-    model = LinearRegression().fit(X_train,Y_train)
-    
-    training_accuracy = model.score(X_train,Y_train)
-    print("Training Accuracy: ", training_accuracy)
-#=============================================================================
-    
-    val_vectorizer = CountVectorizer(stop_words="english", max_features=10000, vocabulary=train_vocab)
-    X_val = val_vectorizer.fit_transform(val["Body"])
-    Y_val = val["Class"]
-    val_vocab = val_vectorizer.get_feature_names()
-    #print(val_vocab==train_vocab)
-    
-    val_accuracy = model.score(X_val,Y_val)
-    print("Validation Accuracy: ", val_accuracy)
-    
-    new_df = pd.DataFrame()
-    new_df["features"] = train_vocab
-    
-    new_df["weights"] = model.coef_[0]
-    ax = sns.distplot(new_df["weights"], kde=False)
-    ax.set_yscale('log')
-    
-    fig= plt.figure(figsize=(12,8))
-
-    sorteddf = new_df.sort_values(by="weights")
-    top_10_spam = sorteddf.iloc[0:10]
-    top_10_ham = sorteddf.iloc[-10:].iloc[::-1]
-    plotguy = pd.concat([top_10_spam,top_10_ham])
-    #print(plotguy)
-    
-    print("Words most associated with conspiracy:",top_10_spam)
-    print("Words most associated with tedx:",top_10_ham)
-    
-    sns.barplot(plotguy["weights"],plotguy["features"])
-
+    write_json(train_vocab, "all_words_in_pcconf_transcripts.json")
 
 get_simple_test_set()
 
