@@ -9,14 +9,14 @@ Created on Mon Jan 11 14:54:31 2021
 from bs4 import BeautifulSoup
 import os
 import json
-from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn.linear_model import LinearRegression
 import pandas as pd
 import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
+
+from nltk.stem import PorterStemmer 
+from nltk.tokenize import word_tokenize 
 
 # === === Helper functions === ===
 def write_json(data, filename):
@@ -107,7 +107,12 @@ def get_simple_test_set():
     vectorizer = CountVectorizer(stop_words="english", max_features=100000)
     X_train = vectorizer.fit_transform(doit.df["Body"])
     train_vocab = vectorizer.get_feature_names()
-    write_json(train_vocab, "all_words_in_pcconf_transcripts.json")
+    #write_json(train_vocab, "all_words_in_pcconf_transcripts.json")
+    stems = []
+    ps = PorterStemmer()
+    for w in train_vocab:
+        stems += [ps.stem(w)]
+    write_json(list(set(stems)), "stems_pcconf_nostopwords.json")
 
 get_simple_test_set()
 
