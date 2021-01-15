@@ -21,6 +21,7 @@ import nltk
 from nltk.stem import PorterStemmer 
 from nltk.tokenize import word_tokenize 
 from nltk.stem import 	WordNetLemmatizer
+from nltk.stem.snowball import SnowballStemmer
 
 # === === helper dict === === ===
 
@@ -162,7 +163,7 @@ class CamelotConfTranscript():
         self.text = self.get_transcript_text()
         self.clean = self.clean_text()
         self.exp = self.expand_cont()
-        self.wordlist()
+        self.wordlist_snowball()
     def get_transcript_text(self):
         allfiles = os.listdir(self.DirName)
         alltext = ""
@@ -188,7 +189,7 @@ class CamelotConfTranscript():
         text3 = re.sub(r'[A-Z][A-Z][\W]*[[0-9][0-9]]*:|[A-Z][A-Z]:','',text2)
         #matches = re.findall(r'[A-Z][A-Z][\W]*[[0-9][0-9]]*:|[A-Z][A-Z]:',text2)
         #print(matches)
-        print(text3)
+        #print(text3)
         return text3
     def expand_cont(self):
         text = self.clean
@@ -207,16 +208,28 @@ class CamelotConfTranscript():
                 text = re.sub(recont,expre,text)
         #write_json(text, "guess_ambiguous_contractions.json")
         return text
-    def wordlist(self):
+    def wordlist_snowball(self):
         text = self.exp.lower()
         lemmas = []
         wordnet_lemmatizer = WordNetLemmatizer()
         tokenization = nltk.word_tokenize(text)
+        
+        stemmer = SnowballStemmer("english")
         #print(tokenization)
         for w in tokenization:
             #pass
-            lemmas += [wordnet_lemmatizer.lemmatize(w)]
+            #lemmas += [wordnet_lemmatizer.lemmatize(w)]
+            lemmas += [stemmer.stem(w)]
         #print(lemmas)
+        lemmadict = {}
+        for w in lemmas:
+            if w in lemmadict:
+                lemmadict[w] += 1
+            else:
+                lemmadict[w] = 1
+        #print(lemmadict)
+        write_json(lemmadict, "snowball_stem_PCC_freq.json")
+        return None
 
         
     
