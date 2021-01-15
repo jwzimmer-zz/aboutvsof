@@ -162,8 +162,9 @@ class CamelotConfTranscript():
         self.DirName = DirName
         self.text = self.get_transcript_text()
         self.clean = self.clean_text()
-        self.exp = self.expand_cont()
-        self.wordlist_snowball()
+        self.exp1 = self.expand_cont()
+        self.exp = self.exp1.lower()
+        self.wordlist()
     def get_transcript_text(self):
         allfiles = os.listdir(self.DirName)
         alltext = ""
@@ -190,7 +191,10 @@ class CamelotConfTranscript():
         #matches = re.findall(r'[A-Z][A-Z][\W]*[[0-9][0-9]]*:|[A-Z][A-Z]:',text2)
         #print(matches)
         #print(text3)
-        return text3
+        #remove punctuation except for - (as in mind-controlled)
+        text4 = re.sub(r'\W*[,|.|!|?|…|...|/|’|\(|\)]\W+',' ',text3)
+        text5 = re.sub(r'…','',text4)
+        return text5
     def expand_cont(self):
         text = self.clean
         for cont in contractions:
@@ -208,29 +212,31 @@ class CamelotConfTranscript():
                 text = re.sub(recont,expre,text)
         #write_json(text, "guess_ambiguous_contractions.json")
         return text
-    def wordlist_snowball(self):
-        text = self.exp.lower()
+    def wordlist(self):
+        text = self.exp
         lemmas = []
-        wordnet_lemmatizer = WordNetLemmatizer()
+        #wordnet_lemmatizer = WordNetLemmatizer()
         tokenization = nltk.word_tokenize(text)
         
-        stemmer = SnowballStemmer("english")
+        #stemmer = SnowballStemmer("english")
         #print(tokenization)
-        for w in tokenization:
+        #for w in tokenization:
             #pass
             #lemmas += [wordnet_lemmatizer.lemmatize(w)]
-            lemmas += [stemmer.stem(w)]
+            #lemmas += [stemmer.stem(w)]
+            
         #print(lemmas)
-        lemmadict = {}
+        lemmas=tokenization
+        lemmadict = {x:0 for x in tokenization}
         for w in lemmas:
             if w in lemmadict:
                 lemmadict[w] += 1
             else:
-                lemmadict[w] = 1
-        #print(lemmadict)
-        write_json(lemmadict, "snowball_stem_PCC_freq.json")
+                pass
+        #print(sorted(lemmadict))
+        #write_json(lemmadict, "snowball_stem_PCC_freq.json")
+        write_json(sorted(lemmadict), "alpha_PCC_nostem.json")
         return None
-
         
     
 
