@@ -166,7 +166,8 @@ class CamelotConfTranscript():
         self.exp1 = self.expand_cont()
         self.exp = self.exp1.lower()
         self.punc_dict = get_json("PCC_nostem_somepunctuation.json")
-        self.wordlist()
+        self.worddict = self.wordlist()
+        self.combine()
     def get_transcript_text(self):
         allfiles = os.listdir(self.DirName)
         alltext = ""
@@ -238,11 +239,34 @@ class CamelotConfTranscript():
                 lemmadict[w] += 1
             else:
                 pass
-        print(sorted(lemmadict))
+        #print(sorted(lemmadict))
         #write_json(lemmadict, "snowball_stem_PCC_freq.json")
         #write_json(lemmadict, "PCC_nostem_somepunctuation.json")
-        return None
         
+        return lemmadict
+    def combine(self):
+        dicti = self.worddict
+        keys = [x for x in self.worddict]
+        for w in keys:
+            if w[-1] == "s":
+                if w[:-1] in dicti:
+                    #print(w, w[:-1])
+                    dicti[w[:-1]]+=dicti[w]
+                    del dicti[w]
+            if w[-1] == "y" and len(w) >= 6:
+                if w[:-2] in dicti:
+                    #print(w, w[:-2])
+                    dicti[w[:-2]]+=dicti[w]
+                    del dicti[w]
+            if (w[-1] == "d" or w[-1] == "r") and len(w) >= 6:
+                if w[:-2] in dicti and w not in ("former"):
+                    if w[-2] == "e":
+                        #print(w, w[:-2])
+                        dicti[w[:-2]]+=dicti[w]
+                        del dicti[w]
+        write_json(dicti,"combining_end_in_ed_er_words.json")
+        print(dicti)
+        return None
     
 
     
