@@ -161,7 +161,8 @@ class CamelotConfTranscript():
         self.DirName = DirName
         self.text = self.get_transcript_text()
         self.clean = self.clean_text()
-        self.expand_cont()
+        self.exp = self.expand_cont()
+        self.wordlist()
     def get_transcript_text(self):
         allfiles = os.listdir(self.DirName)
         alltext = ""
@@ -198,21 +199,25 @@ class CamelotConfTranscript():
                 expre = contractions[cont]
                 matches = re.findall(recont, text)
                 text = re.sub(recont,expre,text)
+        #write_json(text, "guess_ambiguous_contractions.json")
+        return text
+    def wordlist(self):
+        text = self.exp.lower()
+        lemmas = []
+        wordnet_lemmatizer = WordNetLemmatizer()
+        tokenization = nltk.word_tokenize(text)
+        print(tokenization)
+        for w in tokenization:
+            #pass
+            lemmas += [wordnet_lemmatizer.lemmatize(w)]
+        #print(lemmas)
 
-        write_json(text, "guess_ambiguous_contractions.json")
-        return None
         
     
 
     
 
-    #lemmas = []
-    #wordnet_lemmatizer = WordNetLemmatizer()
-        #tokenization = nltk.word_tokenize(body)
-        #for w in tokenization:
-            #pass
-            #lemmas += [wordnet_lemmatizer.lemmatize(w)]
-
+    
 
 CamelotConfTranscript("ProjectCamelotConference/")
 
