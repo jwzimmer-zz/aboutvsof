@@ -19,10 +19,13 @@ import string
 import nltk
 #nltk.download('punkt')
 #nltk.download('wordnet')
+#nltk.download("stopwords")
 from nltk.stem import PorterStemmer 
 from nltk.tokenize import word_tokenize 
 from nltk.stem import 	WordNetLemmatizer
 from nltk.stem.snowball import SnowballStemmer
+from nltk.corpus import stopwords
+
 
 # === === helper dict === === ===
 
@@ -167,7 +170,8 @@ class CamelotConfTranscript():
         self.exp = self.exp1.lower()
         self.punc_dict = get_json("PCC_nostem_somepunctuation.json")
         self.worddict = self.wordlist()
-        self.combine()
+        self.comb = self.combine()
+        self.show_it()
     def get_transcript_text(self):
         allfiles = os.listdir(self.DirName)
         alltext = ""
@@ -195,9 +199,9 @@ class CamelotConfTranscript():
         #print(matches)
         #print(text3)
         #remove punctuation except for - (as in mind-controlled) (and some other random stuff)
-        text4 = re.sub(r'\W*[,|.|!|?|…|...|/|’|\(|\)]\W+',' ',text3)
+        text4 = re.sub(r'\W*[,|.|!|?|…|\:|\;|”|\'|“|...|/|’|\(|\)]\W+',' ',text3)
         #remove all the punctuation (which will mess up e.g. "x-files")
-        #text4 = re.sub(r'[\.|\!|\?|…|...|/|’|\(|\)|\#|\$|%|\&|-|--|,|\'|\'\']',' ',text3)
+        #text4 = re.sub(r'\W*[\.|\!|\?|…|...|/|’|\(|\)|\#|\$|%|\&|-|--|,|\'|\'\']\W+',' ',text3)
         #text4 = text3.translate(str.maketrans(' ', ' ', string.punctuation)) #this actually kinda sucks
         text5 = re.sub(r'…','',text4)
         return text5
@@ -264,9 +268,16 @@ class CamelotConfTranscript():
                         #print(w, w[:-2])
                         dicti[w[:-2]]+=dicti[w]
                         del dicti[w]
-        write_json(dicti,"combining_end_in_ed_er_words.json")
-        print(dicti)
-        return None
+        #write_json(dicti,"combining_end_in_ed_er_words.json")
+        #print(dicti)
+        return dicti
+    def show_it(self):
+        dicti = self.comb
+        sorteddict = {k: v for k, v in sorted(dicti.items(), key=lambda item: item[1])}
+        #print(sorteddict)
+        nostops = {k: v for k, v in sorted(dicti.items(), key=lambda item: item[1]) if k not in stopwords.words('english')}
+        print(nostops)
+        write_json(nostops, "nostopwords.json")
     
 
     
