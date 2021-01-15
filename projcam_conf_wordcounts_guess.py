@@ -183,7 +183,13 @@ class CamelotConfTranscript():
         text = re.sub(notepattern,'',new_text)
         #remove the text "Click here for the video interview"
         text1 = re.sub(r'Click here for the video interview','',text)
-        return text1
+        #remove people's inititals (indicating speaker)
+        text2 = re.sub(r'DO[\'|’]F[\W]*[[0-9][0-9]]*:|DO[\'|’]F:','',text1)
+        text3 = re.sub(r'[A-Z][A-Z][\W]*[[0-9][0-9]]*:|[A-Z][A-Z]:','',text2)
+        #matches = re.findall(r'[A-Z][A-Z][\W]*[[0-9][0-9]]*:|[A-Z][A-Z]:',text2)
+        #print(matches)
+        print(text3)
+        return text3
     def expand_cont(self):
         text = self.clean
         for cont in contractions:
@@ -206,7 +212,7 @@ class CamelotConfTranscript():
         lemmas = []
         wordnet_lemmatizer = WordNetLemmatizer()
         tokenization = nltk.word_tokenize(text)
-        print(tokenization)
+        #print(tokenization)
         for w in tokenization:
             #pass
             lemmas += [wordnet_lemmatizer.lemmatize(w)]
