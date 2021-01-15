@@ -14,6 +14,7 @@ import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 import re
+import string
 
 import nltk
 #nltk.download('punkt')
@@ -164,6 +165,7 @@ class CamelotConfTranscript():
         self.clean = self.clean_text()
         self.exp1 = self.expand_cont()
         self.exp = self.exp1.lower()
+        self.punc_dict = get_json("PCC_nostem_somepunctuation.json")
         self.wordlist()
     def get_transcript_text(self):
         allfiles = os.listdir(self.DirName)
@@ -191,8 +193,11 @@ class CamelotConfTranscript():
         #matches = re.findall(r'[A-Z][A-Z][\W]*[[0-9][0-9]]*:|[A-Z][A-Z]:',text2)
         #print(matches)
         #print(text3)
-        #remove punctuation except for - (as in mind-controlled)
+        #remove punctuation except for - (as in mind-controlled) (and some other random stuff)
         text4 = re.sub(r'\W*[,|.|!|?|…|...|/|’|\(|\)]\W+',' ',text3)
+        #remove all the punctuation (which will mess up e.g. "x-files")
+        #text4 = re.sub(r'[\.|\!|\?|…|...|/|’|\(|\)|\#|\$|%|\&|-|--|,|\'|\'\']',' ',text3)
+        #text4 = text3.translate(str.maketrans(' ', ' ', string.punctuation)) #this actually kinda sucks
         text5 = re.sub(r'…','',text4)
         return text5
     def expand_cont(self):
@@ -233,9 +238,9 @@ class CamelotConfTranscript():
                 lemmadict[w] += 1
             else:
                 pass
-        #print(sorted(lemmadict))
+        print(sorted(lemmadict))
         #write_json(lemmadict, "snowball_stem_PCC_freq.json")
-        write_json(sorted(lemmadict), "alpha_PCC_nostem.json")
+        #write_json(lemmadict, "PCC_nostem_somepunctuation.json")
         return None
         
     
