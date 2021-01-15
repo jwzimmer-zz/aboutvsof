@@ -185,14 +185,6 @@ class CamelotConfTranscript():
         return text1
     def expand_cont(self):
         text = self.clean
-        text = """scalar weaponry. It’s not just these two guys. Okay? It’s
-happening to all of us. You must become aware in order to
-resist it, so you need to know that these things, telephone calls,
-television programs, various anomalous events that happen in your
-midst, pulses sent through stereo equipment. Actually wild
-things, we’ve had some things happen up here with some of this
-equipment. Same thing. Thank you very much for being here for
-this. Thank you so much for coming.  """
         for cont in contractions:
             if "/" in contractions[cont]:
                 pass
@@ -200,20 +192,14 @@ this. Thank you so much for coming.  """
                 parts = cont.split("'")
                 new = ""
                 for i in range(1,len(parts)):
-                    #print(parts, parts[i-1])
                     new += parts[i-1]+"['|’]"
                 new  +=  parts[-1]   
-                #print(new)
                 recont = re.compile(new, re.IGNORECASE)
                 expre = contractions[cont]
                 matches = re.findall(recont, text)
-                if cont  == "we've":
-                    print(matches)
-                    print(recont, expre)
-                    text = re.sub(recont,expre,text)
-                    print(text[-500:])
+                text = re.sub(recont,expre,text)
 
-        #print(text)
+        write_json(text, "only_replace_unambiguous_contractions.json")
         return None
         
     
