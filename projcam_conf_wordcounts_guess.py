@@ -278,7 +278,7 @@ class CamelotConfTranscript():
         #print(sorteddict)
         nostops = {k: v for k, v in sorted(dicti.items(), key=lambda item: item[1]) if k not in stopwords.words('english')}
         #print(nostops)
-        punctuation = ['’','–',']','&',"''",'``']
+        punctuation = ['’','–',']','&',"''",'``','“','-','(','[','$']
         #print("before: ",len(nostops))
         for p in punctuation:
             if p in nostops:
@@ -287,7 +287,27 @@ class CamelotConfTranscript():
             else:
                 print("missing: ",p)
         #print("after: ",len(nostops), len(punctuation), len(nostops)+len(punctuation))
-        write_json(nostops, "nostopwords_minuspunctuation.json")
+        #write_json(nostops, "nostopwords_minuspunctuation.json")
+        count = 0
+        df = pd.DataFrame()
+        labels = []
+        vals = []
+        totalwords = sum([nostops[i] for i in nostops])
+        print(len(nostops))
+        for key, value in sorted(nostops.items(), key=lambda kv: kv[1], reverse=True):
+            #print(key, value/totalwords)
+            if 0 <= count < 657:
+                df[key]=[value]
+                labels += [key]
+                vals += [df[key]]
+            if count > 600:
+                break
+            count += 1
+        #print(df.head())
+        #g = sns.barplot(data=df,orient="h")
+        #print(labels)
+        write_json(labels,"top_10percent_nostops.json")
+        #g.set_xticklabels(labels=labels,rotation=90)
     
 
     
