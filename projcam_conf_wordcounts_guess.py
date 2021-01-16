@@ -204,7 +204,8 @@ class CamelotConfTranscript():
         #text4 = re.sub(r'\W*[\.|\!|\?|…|...|/|’|\(|\)|\#|\$|%|\&|-|--|,|\'|\'\']\W+',' ',text3)
         #text4 = text3.translate(str.maketrans(' ', ' ', string.punctuation)) #this actually kinda sucks
         text5 = re.sub(r'…','',text4)
-        return text5
+        text6 = re.sub(r'--','',text5)
+        return text6
     def expand_cont(self):
         text = self.clean
         for cont in contractions:
@@ -276,8 +277,17 @@ class CamelotConfTranscript():
         sorteddict = {k: v for k, v in sorted(dicti.items(), key=lambda item: item[1])}
         #print(sorteddict)
         nostops = {k: v for k, v in sorted(dicti.items(), key=lambda item: item[1]) if k not in stopwords.words('english')}
-        print(nostops)
-        write_json(nostops, "nostopwords.json")
+        #print(nostops)
+        punctuation = ['’','–',']','&',"''",'``']
+        #print("before: ",len(nostops))
+        for p in punctuation:
+            if p in nostops:
+                #print(p)
+                del nostops[p]
+            else:
+                print("missing: ",p)
+        #print("after: ",len(nostops), len(punctuation), len(nostops)+len(punctuation))
+        write_json(nostops, "nostopwords_minuspunctuation.json")
     
 
     
