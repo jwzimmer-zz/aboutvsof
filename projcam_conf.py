@@ -110,6 +110,7 @@ def get_simple_test_set():
     vectorizer = CountVectorizer(stop_words="english", max_features=10000)
     X_train = vectorizer.fit_transform(train["Body"])
     Y_train = train["Class"]
+    Y_train=Y_train.astype('int')
     train_vocab = vectorizer.get_feature_names()
     #print(train_vocab)
     
@@ -124,6 +125,7 @@ def get_simple_test_set():
     val_vectorizer = CountVectorizer(stop_words="english", max_features=10000, vocabulary=train_vocab)
     X_val = val_vectorizer.fit_transform(val["Body"])
     Y_val = val["Class"]
+    Y_val=Y_val.astype('int')
     val_vocab = val_vectorizer.get_feature_names()
     #print(val_vocab==train_vocab)
     
