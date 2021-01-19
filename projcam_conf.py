@@ -94,15 +94,6 @@ def get_simple_test_set():
 
     doit = ComparisonBetween(it, ittxt, compareit, rawtext)
     #doit.df has all the training data in it
-    
-    testdf = pd.DataFrame(columns=["File","Body","Class"])
-    test_pc = CamelotConfTranscript()
-    pc_txt = test_pc.get_transcript_text("Test/PC/")
-    test_ted = ComparisonTranscript("Test/Ted/")
-    ted_txt = test_ted.get_all_text()
-    
-    testit = ComparisonBetween(test_pc,pc_txt,test_ted,ted_txt)
-    #testit.df has all the test data in it
 
     train, val = train_test_split(doit.df, test_size=0.2, random_state=42)
     #print(train)
