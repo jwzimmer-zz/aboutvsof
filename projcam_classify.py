@@ -15,6 +15,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import re
 import string
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import LinearRegression
 
 import nltk
 #nltk.download('punkt')
@@ -168,10 +172,12 @@ class CamelotConfTranscript():
         self.clean = self.clean_text()
         self.exp1 = self.expand_cont()
         self.exp = self.exp1.lower()
-        self.punc_dict = get_json("PCC_nostem_somepunctuation.json")
-        self.worddict = self.wordlist()
-        self.comb = self.combine()
-        self.show_it()
+        #self.punc_dict = get_json("Progress/PCC_nostem_somepunctuation.json")
+        #self.worddict = self.wordlist()
+        #self.comb = self.combine()
+        #self.show_it()
+        self.log_reg_model()
+        
     def get_transcript_text(self):
         allfiles = os.listdir(self.DirName)
         alltext = ""
@@ -308,7 +314,57 @@ class CamelotConfTranscript():
         #print(labels)
         #write_json(labels,"top_10percent_nostops.json")
         #g.set_xticklabels(labels=labels,rotation=90)
+    def log_reg_model(self):
+        text = self.exp
+        write_json(text,"PC_cleanedandexp_text.json")
+        text = self.clean
+        write_json(text,"PC_cleaned_text.json")
+       
+        #expected format = df has Body (text) and Class columns (0/1)
+        #df has all the training data in it
+        df = pd.DataFrame()
     
+        train, val = train_test_split(df, test_size=0.2, random_state=42)
+        #print(train)
+    
+        vectorizer = CountVectorizer(stop_words="english", max_features=10000)
+        X_train = vectorizer.fit_transform(train["Body"])
+        Y_train = train["Class"]
+        Y_train=Y_train.astype('int')
+        train_vocab = vectorizer.get_feature_names()
+        #print(train_vocab)
+        
+        #print([x for x in doit.df["Class"] if x not in (1,0)])
+    #=============================================================================
+        model = LogisticRegression().fit(X_train,Y_train)
+        
+        training_accuracy = model.score(X_train,Y_train)
+        print("Training Accuracy: ", training_accuracy)
+    #=============================================================================
+        
+        val_vectorizer = CountVectorizer(stop_words="english", max_features=10000, vocabulary=train_vocab)
+        X_val = val_vectorizer.fit_transform(val["Body"])
+        Y_val = val["Class"]
+        Y_val=Y_val.astype('int')
+        val_vocab = val_vectorizer.get_feature_names()
+        #print(val_vocab==train_vocab)
+        
+        val_accuracy = model.score(X_val,Y_val)
+        print("Validation Accuracy: ", val_accuracy)
+        
+        new_df = pd.DataFrame()
+        new_df["features"] = train_vocab
+        
+        new_df["weights"] = model.coef_[0]
+        ax = sns.distplot(new_df["weights"], kde=False)
+        ax.set_yscale('log')
+        
+        fig= plt.figure(figsize=(12,8))
+    
+        sorteddf = new_df.sort_values(by="weights")
+       
+        #sns.barplot(plotguy["weights"],plotguy["features"])
+        
 
     
 
