@@ -46,14 +46,6 @@ class QModel():
     def __init__(self):
         self.df = self.get_df()
         self.run_model(self.df)
-        
-    def get_text_from_website(self,filename):
-        soup = BeautifulSoup(open(self.DirName+filename,encoding="ISO-8859-1"),features="lxml")
-        allps = soup.find_all('p')
-        alltext = []
-        for p in allps:
-            alltext += [p.get_text()]
-        return alltext
 
     def get_df(self,tokenlist0,tokenlist1,n=50):
         #tokenlists should be json list objects (from a file) or python list objects
