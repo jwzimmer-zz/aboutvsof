@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+
+	<html lang="en-US" itemscope itemtype="http://schema.org/NewsArticle">
+
+<head>
+	<!-- Google Optimize -->
+	<!-- Page hiding snippet -->
+	<style>.async-hide { opacity: 0 !important} </style>
+	<script>
+		(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+		h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+		(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+		})(window,document.documentElement,'async-hide','dataLayer',2000,
+		{'GTM-NXSTMDF':true});
+	</script>
+	<!-- Modified Analytics tracking code with Optimize plugin -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-1212249-1', 'auto');
+		ga('require', 'GTM-NXSTMDF');
+	</script>
+	<!-- end Google Optimize -->
+
+	<link rel="apple-touch-icon" sizes="57x57" href="//observer.com/wp-content/themes/newyorkobserver-2014/images/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="//observer.com/wp-content/themes/newyorkobserver-2014/images/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="//observer.com/wp-content/themes/newyorkobserver-2014/images/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="//observer.com/wp-content/themes/newyorkobserver-2014/images/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="//observer.com/wp-content/themes/newyorkobserver-2014/images/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="//observer.com/wp-content/themes/newyorkobserver-2014/images/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="//observer.com/wp-content/themes/newyorkobserver-2014/images/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="//observer.com/wp-content/themes/newyorkobserver-2014/images/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="//observer.com/wp-content/themes/newyorkobserver-2014/images/favicons/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="//observer.com/wp-content/themes/newyorkobserver-2014/images/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="//observer.com/wp-content/themes/newyorkobserver-2014/images/favicons/favicon-194x194.png" sizes="194x194">
+	<link rel="icon" type="image/png" href="//observer.com/wp-content/themes/newyorkobserver-2014/images/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="//observer.com/wp-content/themes/newyorkobserver-2014/images/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="//observer.com/wp-content/themes/newyorkobserver-2014/images/favicons/favicon-16x16.png" sizes="16x16">
+
+	<link rel="manifest" href="//observer.com/wp-content/themes/newyorkobserver-2014/images/favicons/manifest.json">
+	<meta name="msapplication-TileColor" content="#2b5797">
+	<meta name="msapplication-TileImage" content="//observer.com/wp-content/themes/newyorkobserver-2014/images/favicons/mstile-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"21151edd0b",applicationID:"312934720"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(6),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(y,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var w=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1194.min.js"},h=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:w,features:{},xhrWrappable:h,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var x=0},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(7),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="">
+	<meta property="fb:app_id" content="132947390197809" />
+	<title>National Enquirer Never Would Have Run BuzzFeed&#8217;s Trump Dossier | Observer</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://observer.com/xmlrpc.php">
+	<link href="https://plus.google.com/+NewYorkObserver" rel="publisher" />
+
+	<link rel="preload" href="//observer.com/wp-content/themes/newyorkobserver-2014/assets/fonts/flexslider-icon.woff" as="font" type="font/woff" crossorigin="anonymous">
+	<link rel="preload" href="//observer.com/wp-content/themes/newyorkobserver-2014/assets/fonts/fontello/fontello.woff2?91438482" as="font" type="font/woff" crossorigin="anonymous">
+
+
+
+	<script type="text/javascript">
+		function deferUntil(condition, callback, timeout) {
+			timeout = timeout || 10;
+
+			// Wait until the condition is achieved
+			var defer_interval = setInterval(function() {
+				var condition_met = (condition && (typeof condition == 'function')) ? condition() : true;
+				if (!condition_met) {
+					return;
+				}
+
+				if (callback && (typeof callback == 'function')) {
+					callback();
+				}
+
+				// Clear the defer_interval
+				clearInterval(defer_interval);
+			}, timeout);
+		}
+	</script>
+
+	
+<meta name="description" content="Website aspires to journalistic greatness but falls far short of tabloid standards." /><meta name="google-site-verification" content="zJ3aRJmlL0G2aEaUe-CAxMb8voV1BqsDHnDfkKvJNC8" />
+<meta name="google-site-verification" content="xjQFOHNMYtcg_Ma2EUJfyICaOxuCKzKALkSe5Z-oVuk" />
+<meta name="msvalidate.01" content="A18ACD436D5A3997E3DA2573E3FD792A" />
+
+<!-- Jetpack Site Verification Tags -->
+<meta name="p:domain_verify" content="84a72b56883f4f5a9735370ae9dbc696" />
+<link rel='dns-prefetch' href='//ak.sail-horizon.com' />
+<link rel='dns-prefetch' href='//s.ntv.io' />
+<link rel='dns-prefetch' href='//widgets.outbrain.com' />
+<link rel='dns-prefetch' href='//s7.addthis.com' />
+<link rel='dns-prefetch' href='//htlbid.com' />
+<link rel='dns-prefetch' href='//a.omappapi.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Observer &raquo; Feed" href="https://observer.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Observer &raquo; Comments Feed" href="https://observer.com/comments/feed/" />
+<link rel='stylesheet' id='all-css-0' href='https://observer.com/_static/??-eJytkN1uwjAMhV9oqVtACC6mPUuamCzg/Ch2C317QmHTJIrExa6sOOd8Oj5wzspHQ4NFBsMM1rNAT8mcFPm+6DIBy0TYBB+bKviA6jApCkaBTIPzkUGHrFxKjlCJdiroqB0WyENP3szYZYW6K5648o2h5ol4nlI5pZ6xjFW9arsNaGaUe9bfj4DW68WEb5JGjDYVOBBemLzF8h+wm4soLaLCoH7KO6JkXeveN+vZ/ni/LHs+VplSh8yGv4ub6yt8dtuua3dtu15dAbegse0=' type='text/css' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<script type='text/javascript' src='https://observer.com/wp-includes/js/jquery/jquery.min.js?m=1607466251g'></script>
+<script defer src='https://observer.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script defer src='https://observer.com/wp-content/plugins/amp-google-tag-manager/public/js/amp-google-tag-manager-public.js?ver=1.0.0' id='amp-google-tag-manager-defer-js'></script>
+<script id='tag-js-extra'>
+var tag = {"options":{"customerId":"eddd21a32bf5284abd9bc8ac7ddeec34"}};
+</script>
+<script defer src='https://observer.com/wp-content/plugins/sailthru/js/tag.js?ver=5.6' id='tag-js'></script>
+<script async src='//s.ntv.io/serve/load.js?ver=1.0.0' id='nyo-nativo-js-async-js'></script>
+<script defer src='//observer.com/wp-content/themes/newyorkobserver-2014/assets/js/app.min.js?ver=5.6' id='nyo-app-defer-js'></script>
+<script async src='https://widgets.outbrain.com/outbrain.js' id='outbrain-async-js'></script>
+<script defer src='https://s7.addthis.com/js/300/addthis_widget.js?ver=1#pubid=ra-526fe9ee7831a6ff' id='addthis-defer-js'></script>
+<script async src='https://htlbid.com/v3/observer.com/htlbid.js?ver=3.0' id='hashtag-labs-async-js'></script>
+<link rel="canonical" href="https://observer.com/2017/01/national-enquirer-buzzfeed-ben-smith-trump-dossier/" />
+<link rel="https://api.w.org/" href="https://observer.com/wp-json/" /><link rel="alternate" type="application/json" href="https://observer.com/wp-json/wp/v2/posts/891183" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://observer.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://observer.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.6" />
+<link rel='shortlink' href='http://bit.ly/2jveidc' />
+<link rel="alternate" type="application/json+oembed" href="https://observer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fobserver.com%2F2017%2F01%2Fnational-enquirer-buzzfeed-ben-smith-trump-dossier%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://observer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fobserver.com%2F2017%2F01%2Fnational-enquirer-buzzfeed-ben-smith-trump-dossier%2F&#038;format=xml" />
+<!-- OneTrust Cookies Consent Notice start -->
+<script async src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="6a95224d-e53b-4c23-b2a6-31faa3db3cc4"></script>
+<script type="text/javascript">
+  function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end -->
+    
+
+<!-- BEGIN Sailthru Horizon Meta Information -->
+<meta name="sailthru.date" content="2017-01-17 10:30:24" />
+<meta name="sailthru.title" content="The Tabloids Never Would Have Run BuzzFeed&#8217;s Trump Dossier" />
+<meta name="sailthru.tags" content="ben smith, buzzfeed, CNN, donald trump, national enquirer, obsMedia, obsPolitics, obsInnovation, loc-Russia, loc-National" />
+<meta name="sailthru.description" content="Website aspires to journalistic greatness but falls far short of National Enquirer standards." />
+<meta name="sailthru.image.full" content="https://observer.com/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?quality=80&amp;strip" />
+<meta name="sailthru.image.thumb" content="https://observer.com/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?w=50&amp;quality=80&amp;strip" />
+<meta name="sailthru.article.image.header" content="https://observer.com/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?w=728&amp;h=418&amp;crop=1&amp;quality=80&amp;strip" />
+<meta name="sailthru.article.image.grid" content="https://observer.com/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?w=300&amp;h=225&amp;crop=1&amp;quality=80&amp;strip" />
+<meta name="sailthru.byline_name" content="Liz Crokin" />
+<meta name="sailthru.byline_bio" content="Liz Crokin is an award-winning author, journalist, political pundit and an advocate for sex crime victims. Her work has appeared in the RedEye Edition of the Chicago Tribune, the Chicago Sun-Times: Splash, Townhall, Elite Daily, Marie Claire and Us Weekly. Follower her on Twitter and Instagram @LizCrokin." />
+<meta name="sailthru.byline_twitter" content="@LizCrokin" />
+<meta name="sailthru.byline_facebook" content="https://www.facebook.com/liz.rubyghostfire" />
+<meta name="sailthru.byline_slug" content="liz-crokin" />
+<meta name="sailthru.byline_avatar_url" content="https://observer.com/wp-content/uploads/sites/2/2016/08/lizcrokinhs2015_final-4.jpg?quality=80&#038;w=93&#038;strip" />
+<!-- END Sailthru Horizon Meta Information -->
+
+			<meta property="fb:pages" content="9665781619" />
+			<style type='text/css'>img#wpstats{display:none}</style><meta name="pocket-site-verification" content="8c38a2261495b2454811b281aae39b" /><meta name="google-site-verification" content="zJ3aRJmlL0G2aEaUe-CAxMb8voV1BqsDHnDfkKvJNC8" />
+<!-- Hashtag Labs -->
+<script>
+  window.htlbid = window.htlbid || {};
+  htlbid.cmd = htlbid.cmd || [];
+  htlbid.cmd.push(function() {
+    htlbid.layout(''); // Leave empty string or add custom layout
+    htlbid.setTargeting("is_testing", "no");
+htlbid.setTargeting("is_home", "no");
+htlbid.setTargeting("pagetype", "single");
+htlbid.setTargeting("url", "https:\/\/observer.com\/2017\/01\/national-enquirer-buzzfeed-ben-smith-trump-dossier\/");
+htlbid.setTargeting("tag", "opiniondonald-trump,john-edwardsben-smith,buzzfeed,cnn,donald-trump,national-enquirer");
+htlbid.setTargeting("author", "liz-crokin");
+htlbid.setTargeting("articleID", "article_891183");
+htlbid.setTargeting("brandsafe", "no");
+htlbid.setTargeting("section", "media,politics,innovation");
+htlbid.setTargeting("servead", "no");
+htlbid.setTargeting("location", "russia,national");
+  });
+</script>
+			<style type="text/css">
+				/* If html does not have either class, do not show lazy loaded images. */
+				html:not( .jetpack-lazy-images-js-enabled ):not( .js ) .jetpack-lazy-image {
+					display: none;
+				}
+			</style>
+			<script>
+				document.documentElement.classList.add(
+					'jetpack-lazy-images-js-enabled'
+				);
+			</script>
+		<link rel="amphtml" href="https://observer.com/2017/01/national-enquirer-buzzfeed-ben-smith-trump-dossier/amp/">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="The Tabloids Never Would Have Run BuzzFeed&#8217;s Trump Dossier" />
+<meta property="og:url" content="https://observer.com/2017/01/national-enquirer-buzzfeed-ben-smith-trump-dossier/" />
+<meta property="og:description" content="Website aspires to journalistic greatness but falls far short of National Enquirer standards." />
+<meta property="article:published_time" content="2017-01-17T15:30:24+00:00" />
+<meta property="article:modified_time" content="2017-02-02T00:30:05+00:00" />
+<meta property="og:site_name" content="Observer" />
+<meta property="og:image" content="https://observer.com/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?quality=80&amp;strip" />
+<meta property="og:image:width" content="635" />
+<meta property="og:image:height" content="353" />
+<meta property="og:image:alt" content="CNN" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:creator" content="@Observer" />
+<meta name="twitter:site" content="@observer" />
+<meta name="twitter:text:title" content="The Tabloids Never Would Have Run BuzzFeed&#8217;s Trump Dossier" />
+<meta name="twitter:image" content="https://observer.com/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?w=876&amp;h=438&amp;crop=1&amp;quality=80&amp;strip" />
+<meta name="twitter:image:alt" content="CNN" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="article:publisher" content="https://www.facebook.com/observer" />
+<meta property="article:author" content="http://observer.com/author/liz-crokin" />
+
+<!-- End Jetpack Open Graph Tags -->
+
+	
+<script>
+!function(n,e,o,r,i){if(!e){e=e||{},window.permutive=e,e.q=[],e.config=i||{},e.config.projectId=o,e.config.apiKey=r,e.config.environment=e.config.environment||"production";for(var t=["addon","identify","track","trigger","query","segment","segments","ready","on","once","user","consent"],c=0;c<t.length;c++){var f=t[c];e[f]=function(n){return function(){var o=Array.prototype.slice.call(arguments,0);e.q.push({functionName:n,arguments:o})}}(f)}}}(document,window.permutive,"3b5c18b9-96b7-48e4-a3ef-011eb84a970d","6b8d2782-a057-45b2-b2fd-5e7238c30400",{});
+window.googletag=window.googletag||{},window.googletag.cmd=window.googletag.cmd||[],window.googletag.cmd.push(function(){if(0===window.googletag.pubads().getTargeting("permutive").length){var g=window.localStorage.getItem("_pdfps");window.googletag.pubads().setTargeting("permutive",g?JSON.parse(g):[])}}); 
+
+var webData = {"page":{"article":{"channels":["Media","Politics","Innovation"],"tags":["ben smith","buzzfeed","CNN","donald trump","national enquirer"]}}};
+
+
+function generateUUID() {
+	// Generate UUID with crypto API
+	if (typeof crypto !== 'undefined') {
+		return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+			(c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+		);
+	}
+
+	// If Crypto API not available, fallback. Not as reliable.
+	return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
+
+function getCookieVal(offset) {
+	var endstr = document.cookie.indexOf (";", offset);
+	if (endstr == -1) {
+		endstr = document.cookie.length;
+	}
+	return unescape(document.cookie.substring(offset, endstr));
+}
+
+function getCookie(name) {
+	var arg = name + "=";
+	var alen = arg.length;
+	var clen = document.cookie.length;
+	var i = 0;
+	while (i < clen) {
+		var j = i + alen;
+		if (document.cookie.substring(i, j) == arg) {
+			return getCookieVal(j);
+		}
+
+		i = document.cookie.indexOf(" ", i) + 1;
+		if (i == 0) break;
+	}
+	return "";
+}
+
+function hcPermutiveSetCookie(name, data, expiration) {
+	if (!expiration) {
+		expiration = new Date();
+		// 1 year.
+		expiration.setTime(expiration.getTime() + (5*365*24*60*60*1000));
+	}
+
+	if (typeof data !== 'string') {
+		data = JSON.stringify(data);
+	}
+
+	document.cookie = name + "=" + data + "; expires=" + expiration.toUTCString() + "; path=/";
+}
+
+function getPermutiveDefaultUserID () {
+	var cookieID = "hcpermutive_uuid";
+	var cookieData = getCookie(cookieID);
+	if (!cookieData) {
+		cookieData = generateUUID();
+		hcPermutiveSetCookie(cookieID, cookieData);
+		return cookieData;
+	}
+	
+	return cookieData;
+}
+
+// permutive identify - Default
+var userDefaultIdentity = getPermutiveDefaultUserID();
+if (userDefaultIdentity !== null && typeof userDefaultIdentity !== 'undefined') {
+	window.permutive.identify([{
+		id: userDefaultIdentity,
+		tag: "default",
+		priority: 1,
+	}]);
+
+}
+
+
+permutive.addon('web', webData);
+
+
+window.permutive.readyWithTimeout=function(e,i,t){var u=!1,n=function(){u||(e(),u=!0)};(t=t||1/0)!==1/0&&window.setTimeout(n,t),permutive.ready(n,i)};
+</script>
+<script async src="//cdn.permutive.com/3b5c18b9-96b7-48e4-a3ef-011eb84a970d-web.js"></script>
+
+
+	<!-- Set dataLayer values -->
+	    <script>
+		window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'postId': 891183,
+            'author': "Liz Crokin",
+            'channels': "Media|Politics|Innovation",
+            'publicationDate': "2017-01-17 10:30:24",
+			"modifiedDate": "2017-02-01 19:30:05",
+            'topicTags' : "ben smith|buzzfeed|CNN|donald trump|national enquirer",
+            'staffStatus' : "Contributor",
+            'contentTeam' : "Politics"        });
+    </script>
+<!-- End dataLayer -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https:////www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5BPNP6');</script>
+<!-- End Google Tag Manager -->
+	<!-- Chartbeat Analytics, needs to be post-canonical declaration -->
+	
+<script type='text/javascript'>
+    (function() {
+        /** CONFIGURATION START **/
+        var _sf_async_config = window._sf_async_config = (window._sf_async_config || {});
+        _sf_async_config.uid = 13018;
+        _sf_async_config.domain = "observer.com";
+        _sf_async_config.useCanonical = true;
+        _sf_async_config.useCanonicalDomain = true;
+
+        _sf_async_config.sections = "Media, Politics, Innovation";
+        _sf_async_config.authors = "Liz Crokin";
+
+				        
+				/** CONFIGURATION END **/
+        function loadChartbeat() {
+            var e = document.createElement('script');
+            var n = document.getElementsByTagName('script')[0];
+            e.type = 'text/javascript';
+            e.async = true;
+            e.src = '//static.chartbeat.com/js/chartbeat.js';
+            n.parentNode.insertBefore(e, n);
+        }
+        loadChartbeat();
+     })();
+</script>
+
+
+
+	<!-- sailthru -->
+	<meta name="sailthru.author" content="Liz Crokin" />
+	<!--sailthru end-->
+
+
+<!-- Organization schema -->
+<script type="application/ld+json">
+	{"@context":"http:\/\/schema.org\/","@type":"Organization","name":"Observer","logo":{"@type":"ImageObject","url":"https:\/\/observer.com\/wp-content\/themes\/newyorkobserver-2014\/images\/observer-logo-2015.png","height":60,"width":428},"sameAs":["https:\/\/plus.google.com\/+NewYorkObserver","https:\/\/en.wikipedia.org\/wiki\/Observer_Media","https:\/\/www.facebook.com\/observer","https:\/\/twitter.com\/observer","https:\/\/www.linkedin.com\/company\/observer.com","https:\/\/www.instagram.com\/observer\/"],"url":"https:\/\/observer.com"}</script>
+<!--end Organization schema-->
+
+
+<!-- NewsArticle schema -->
+<script type="application/ld+json">
+	{"@context":"http:\/\/schema.org","@type":"NewsArticle","name":"The Tabloids Never Would Have Run BuzzFeed&#8217;s Trump Dossier","headline":"The Tabloids Never Would Have Run BuzzFeed&#8217;s Trump Dossier","url":"https:\/\/observer.com\/2017\/01\/national-enquirer-buzzfeed-ben-smith-trump-dossier\/","articleSection":"Media","datePublished":"2017-01-17 15:30:24","dateModified":"2017-02-02 00:30:05","inLanguage":"en-us","publisher":{"@type":"Organization","name":"Observer","logo":{"@type":"ImageObject","url":"https:\/\/observer.com\/wp-content\/themes\/newyorkobserver-2014\/images\/observer-logo-2015.png","height":60,"width":428}},"mainEntityOfPage":"https:\/\/observer.com\/2017\/01\/national-enquirer-buzzfeed-ben-smith-trump-dossier\/","keywords":["ben smith","buzzfeed","CNN","donald trump","national enquirer"],"author":[{"@type":"Person","name":"Liz Crokin","url":"https:\/\/observer.com\/author\/liz-crokin\/"}],"creator":[{"@type":"Person","name":"Liz Crokin","url":"https:\/\/observer.com\/author\/liz-crokin\/"}],"thumbnailUrl":"https:\/\/observer.com\/wp-content\/uploads\/sites\/2\/2017\/01\/screen-shot-2017-01-17-at-9-57-35-am.png","image":{"@type":"ImageObject","url":"https:\/\/observer.com\/wp-content\/uploads\/sites\/2\/2017\/01\/screen-shot-2017-01-17-at-9-57-35-am.png","representativeOfPage":true,"height":794,"width":1428}}</script>
+<!--end NewsArticle schema-->
+
+
+
+
+</head>
+
+<body class="post-template-default single single-post postid-891183 single-format-standard group-blog">
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5BPNP6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager -->
+
+<div id="page" class="hfeed site">
+	
+	
+	<header class="fw-site-header">
+		<div class="interior-container">
+
+			<div class="nav-controls">
+				<div class="hamburger square-control">
+					<div class="bar-container">
+						<div class="bar"></div>
+					</div>
+				</div>
+				<div class="search-wrapper">
+					<div class="pretty-search-wrapper">
+						<div class="pretty-search">
+							<span class="clear-search"></span>
+							<input class="search-terms" placeholder="Search..." />
+						</div>
+					</div>
+					<form role="search" method="get" class="search-form" action="https://observer.com/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search&hellip;" value="" name="s">
+	</label>
+	<button type="submit" class="search-submit"><i class="fa fa-search"></i><span class="screen-reader-text">Submit</span>
+</button>
+</form>
+					<div class="nav-search square-control">
+						<span class="search-icon"></span>
+					</div>
+				</div>
+			</div>
+			<div class="branding" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+				<div class="branding-logo">
+					<a itemprop="name" class="site-title" href="https://observer.com/" rel="home">Observer</a>
+					<img itemprop="logo" src="https://observer.com/wp-content/themes/newyorkobserver-2014/images/observer-logo-2015.png" loading="lazy" alt="Observer Logo" style="display:none;width:0;">
+									</div>
+				<div class="channels"><ul id="menu-main-navigation" class="menu"><li id="menu-item-916526" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-916526"><a href="http://observer.com/arts/">Arts</a><li class="delimiter">|</li></li>
+<li id="menu-item-916519" class="culture menu-item menu-item-type-custom menu-item-object-custom menu-item-916519"><a href="http://observer.com/entertainment/">Entertainment</a><li class="delimiter">|</li></li>
+<li id="menu-item-920719" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-920719"><a href="http://observer.com/innovation/">Innovation</a><li class="delimiter">|</li></li>
+</ul></div>
+									<div class="subscribe">
+						<a href="https://businessofart.observer.com/" target="_blank">Events</a>
+						<a href="https://observer.com/subscribe">Newsletters</a>
+					</div>
+				
+			</div>
+			<div class="flyout">
+				<div>
+					<div class="flyout-inner-container"><ul id="menu-flyout-menu" class="menu"><li id="menu-item-916545" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-916545"><a href="http://observer.com/arts/">Arts</a><span class="chevron-toggle"></span><div class="rule"></div>
+<ul class="sub-menu">
+	<li id="menu-item-916548" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-916548"><a href="http://observer.com/theater/">Theater</a><span class="chevron-toggle"></span><div class="rule"></div></li>
+	<li id="menu-item-916546" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-916546"><a href="http://observer.com/visual-art/">Visual Art</a><span class="chevron-toggle"></span><div class="rule"></div></li>
+	<li id="menu-item-916549" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-916549"><a href="http://observer.com/opera/">Opera</a><span class="chevron-toggle"></span><div class="rule"></div></li>
+	<li id="menu-item-916547" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-916547"><a href="http://observer.com/dance/">Dance</a><span class="chevron-toggle"></span><div class="rule"></div></li>
+	<li id="menu-item-916555" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-916555"><a href="http://observer.com/books/">Books</a><span class="chevron-toggle"></span><div class="rule"></div></li>
+</ul>
+</li>
+<li id="menu-item-916550" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-916550"><a href="http://observer.com/entertainment/">Entertainment</a><span class="chevron-toggle"></span><div class="rule"></div>
+<ul class="sub-menu">
+	<li id="menu-item-916553" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-916553"><a href="http://observer.com/movies/">Movies</a><span class="chevron-toggle"></span><div class="rule"></div></li>
+	<li id="menu-item-916552" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-916552"><a href="http://observer.com/tv/">TV</a><span class="chevron-toggle"></span><div class="rule"></div></li>
+	<li id="menu-item-918186" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-918186"><a href="http://observer.com/celebrity/">Celebrity</a><span class="chevron-toggle"></span><div class="rule"></div></li>
+	<li id="menu-item-918181" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-918181"><a href="http://observer.com/lifestyle/">Lifestyle</a><span class="chevron-toggle"></span><div class="rule"></div></li>
+</ul>
+</li>
+<li id="menu-item-920732" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-920732"><a href="http://observer.com/innovation/">Innovation</a><span class="chevron-toggle"></span><div class="rule"></div>
+<ul class="sub-menu">
+	<li id="menu-item-921010" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-921010"><a href="http://observer.com/technology/">Technology</a><span class="chevron-toggle"></span><div class="rule"></div></li>
+	<li id="menu-item-950127" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-950127"><a href="http://observer.com/space/">Space</a><span class="chevron-toggle"></span><div class="rule"></div></li>
+	<li id="menu-item-920824" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-920824"><a href="http://observer.com/internet-culture/">Digital Media</a><span class="chevron-toggle"></span><div class="rule"></div></li>
+	<li id="menu-item-920737" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-920737"><a href="http://observer.com/startups/">Startups</a><span class="chevron-toggle"></span><div class="rule"></div></li>
+</ul>
+</li>
+</ul></div>					<a href="https://artobserved.observer.com/home" target="_blank" class="mobile-subscribe">Events</a>
+					<a href="/subscribe" class="mobile-subscribe">Newsletters</a>
+				</div>
+			</div>
+		</div>
+					<div class="obs-site-header">
+				<div class="OUTBRAIN" data-src="http://observer.com/" data-widget-id="AR_2"
+					 data-ob-template="nyobserver"></div>
+				<script type="text/javascript" async="async" src="https://widgets.outbrain.com/outbrain.js"></script>
+			</div>
+			</header>
+	<div id="content" class="site-content">
+					
+  <!-- Hashtag Labs Ad observer_leaderboard_atf -->
+  <div class="ad-wrapper ad-bottom-margin ad-leaderboard htlad-observer_leaderboard_atf" id="observer_leaderboard_atf"></div>
+		
+<!--a wrapper to include the content + sidebar-->
+<div id="single-post-wrapper">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+			<div class="article-wrap">
+									
+
+<article
+	id="post-891183"
+	class="post-891183 post type-post status-publish format-standard has-post-thumbnail tag-ben-smith tag-buzzfeed tag-cnn tag-donald-trump tag-national-enquirer channel-media channel-politics channel-innovation location-russia location-national nyo_column-opinion nyo_person-donald-trump nyo_person-john-edwards nyo_post_hidden-nyo_homepage style-opinion"	data-post="891183"
+	data-title="The Tabloids Never Would Have Run BuzzFeed&#8217;s Trump Dossier"
+	data-url="https://observer.com/2017/01/national-enquirer-buzzfeed-ben-smith-trump-dossier/"
+	data-page-url="/2017/01/national-enquirer-buzzfeed-ben-smith-trump-dossier/"
+	data-date="2017-01-17 10:30:24"
+	data-date-iso="2017-01-17T10:30:24-05:00"
+	data-author="Liz Crokin"
+	data-coauthors="Liz Crokin"
+	data-channels="Media, Politics, Innovation"
+	data-piped-channels="Media|Politics|Innovation"
+	>
+
+	<header class="entry-header">
+		<div class="entry-teaser">Opinion</div>
+		<h1 class="entry-title" itemprop="headline">The Tabloids Never Would Have Run BuzzFeed&#8217;s Trump Dossier</h1>
+		<h2 class="dek">Website aspires to journalistic greatness but falls far short of National Enquirer standards</h2>		<div class="entry-meta nyo-social-comments nyo-social-comments-above">
+			By <span class="author" itemprop="author"><a rel="author" class="url fn n" href="/author/liz-crokin/" title="View All Posts by Liz Crokin">Liz Crokin</a></span> &bull; <span class="entry-date"><time itemprop="datePublished" datetime="2017-01-17">01/17/17 10:30am</time></span>			<ul class="social-icons large share-buttons">
+		<li class="facebook">
+			<a
+				data-label="facebook" data-social-target="https://observer.com/2017/01/national-enquirer-buzzfeed-ben-smith-trump-dossier/"
+				href="http://api.addthis.com/oexchange/0.8/forward/facebook/offer?url=https%3A%2F%2Fobserver.com%2F2017%2F01%2Fnational-enquirer-buzzfeed-ben-smith-trump-dossier%2F&#038;title=The+Tabloids+Never+Would+Have+Run+BuzzFeed%26%238217%3Bs+Trump+Dossier&#038;pubid=ra-526fe9ee7831a6ff" title="Share on Facebook" target="_blank">
+				<i class="icon icon-facebook"></i>
+			</a>
+		</li>
+		<li class="twitter">
+			<a
+				data-label="twitter" data-social-target="https://observer.com/2017/01/national-enquirer-buzzfeed-ben-smith-trump-dossier/"
+				href="http://api.addthis.com/oexchange/0.8/forward/twitter/offer?url=https%3A%2F%2Fobserver.com%2F2017%2F01%2Fnational-enquirer-buzzfeed-ben-smith-trump-dossier%2F&#038;title=The+Tabloids+Never+Would+Have+Run+BuzzFeed%26%238217%3Bs+Trump+Dossier&#038;pubid=ra-526fe9ee7831a6ff" target="_blank" title="Tweet">
+				<i class="icon icon-twitter"></i>
+			</a>
+		</li>
+		<li class="linkedin">
+			<a
+				data-label="linkedin" data-social-target="https://observer.com/2017/01/national-enquirer-buzzfeed-ben-smith-trump-dossier/"
+				href="http://api.addthis.com/oexchange/0.8/forward/linkedin/offer?url=https%3A%2F%2Fobserver.com%2F2017%2F01%2Fnational-enquirer-buzzfeed-ben-smith-trump-dossier%2F&#038;title=The+Tabloids+Never+Would+Have+Run+BuzzFeed%26%238217%3Bs+Trump+Dossier&#038;pubid=ra-526fe9ee7831a6ff" target="_blank" title="Share on LinkedIn">
+				<i class="icon icon-linkedin"></i>
+			</a>
+		</li>
+		<li class="email">
+			<a
+				data-label="email" data-social-target="https://observer.com/2017/01/national-enquirer-buzzfeed-ben-smith-trump-dossier/"
+				href="http://api.addthis.com/oexchange/0.8/forward/email/offer?url=https%3A%2F%2Fobserver.com%2F2017%2F01%2Fnational-enquirer-buzzfeed-ben-smith-trump-dossier%2F&#038;title=The+Tabloids+Never+Would+Have+Run+BuzzFeed%26%238217%3Bs+Trump+Dossier&#038;pubid=ra-526fe9ee7831a6ff" target="_blank" title="Send email">
+				<i class="icon icon-mail"></i>
+			</a>
+		</li>
+	</ul>		</div><!-- .entry-meta -->
+
+	</header><!-- .entry-header -->
+
+	<div class="entry-content" itemprop="articleBody">
+
+		<div id="attachment_891204" style="width: 980px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-891204" loading="lazy" class="wp-image-891204 size-full-width jetpack-lazy-image" src="https://observer-media.go-vip.net/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?w=970" alt="CNN" width="970" height="539" data-lazy-srcset="https://observer.com/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png 1428w, https://observer.com/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?resize=300,167 300w, https://observer.com/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?resize=768,427 768w, https://observer.com/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?resize=635,353 635w, https://observer.com/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?resize=970,539 970w, https://observer.com/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?resize=320,178 320w, https://observer.com/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?resize=50,28 50w" data-lazy-sizes="(max-width: 300px) 100vw, 700px" data-lazy-src="https://observer-media.go-vip.net/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?w=970&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img aria-describedby="caption-attachment-891204" loading="lazy" class="wp-image-891204 size-full-width" src="https://observer-media.go-vip.net/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?w=970" alt="CNN" width="970" height="539" srcset="https://observer.com/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png 1428w, https://observer.com/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?resize=300,167 300w, https://observer.com/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?resize=768,427 768w, https://observer.com/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?resize=635,353 635w, https://observer.com/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?resize=970,539 970w, https://observer.com/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?resize=320,178 320w, https://observer.com/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?resize=50,28 50w" sizes="(max-width: 300px) 100vw, 700px" /></noscript><p id="caption-attachment-891204" class="wp-caption-text">Buzzfeed Editor Ben Smith defends publishing unconfirmed Trump dossier on CNN&#8217;s &#8216;Reliable Sources.&#8217; <span class="media-credit">CNN</span></p></div>
+<p>I used to work at the tabloids. I also worked at more esteemed publications (<em>Chicago Tribune’s City News</em> and the <em>Chicago Sun-Times)</em> but for the purposes of exposing the ludicrousness of BuzzFeed publishing the outrageous 35-page dossier on President-elect Donald Trump’s alleged trysts with Russian prostitutes involving golden showers, it’s my experience serving as an editor and reporter at <em>Star</em>, <em>Us Weekly</em>, <em>In Touch Weekly</em> and the <em>National Enquirer</em> that are most relevant. Because that dossier would never have seen the light of day at <em>Star</em>, <em>National Enquirer</em> or any of the other much-maligned tabloids. Here’s why:
+<p>There’s a myth that the tabloids put out outright lies. That’s not true. Of course, there are some dishonest journalists at the tabloids who make up stories and, yes, stories are sometimes exaggerated. However, this also happens at newspapers in the mainstream media. In 2003 <a href="http://www.cnn.com/2003/US/Northeast/05/10/ny.times.reporter/">it was revealed</a> that <em>New York Times</em> reporter Jayson Blair invented quotes, wrote about scenery from published photographs and even stole material from other news organizations.<div class="ad-wrapper ad-top-margin ad-incontent ad-mobile htlad-observer_article_instream_mobile_1" id="observer_article_instream_mobile_1"></div><div class="ad-wrapper ad-top-margin ad-desktop ad-incontent htlad-observer_article_instream_dsk_1" id="observer_article_instream_dsk_1"></div>
+<p>The best investigative reporters I’ve worked alongside were not working in the MSM. They worked at the tabloids. To get a salacious story in the tabloids about a high-profile politician or a celebrity, can take years of reporting and an army of journalists. Also, the lawyers at each tabloid carefully examine all of the reporting, evidence and the sourcing before the legal team approves the story.
+<p>For example, in 2012, I worked on a story where a prostitute alleged that one of her clients was a major politician. I worked on this story for about eight months. I interviewed her on the record and she went into detail about her history with this politician. (Ironically, those sexual details included golden showers.) This interview was videotaped. The prostitute also signed a legal document stating that everything she said was true. I collected a ton of evidence such as phone records to corroborate the story and confirmed details of her story with multiple sources. There were at least three other reporters who worked with me on this story. I went to the city where her alleged sexual interactions took place with this politician to confirm that he was there on the dates she claimed. There was a ton of work and thorough investigation that went into this piece and the lawyers said that they would approve the story after the prostitute did one final thing. They required her to take a polygraph test and pass. She agreed; however, when the scheduled day arrived to take the poly she went AWOL. The story, a certain blockbuster scoop, never saw the light of day.
+<p>So despite the bad rap that the tabloids receive, none of the tabloids I’ve worked for would have run the allegations about Trump based on the unverified evidence.<div class="ad-wrapper ad-top-margin ad-incontent ad-video htlad-observer_video_1x1" id="observer_video_1x1"></div>
+<p class="pullquote">&#8216;It appears the once high and mighty CNN’s journalistic standards and ethics have slipped to an all-time low as they turn to sensationalism over quality.&#8217;
+<p>Maxine Page, a 15-year tabloid veteran and former executive editor of <em>Radar</em>, who is not a Trump supporter, concurs.
+<p>“I can say with 99.9 percent certainty that there’s no way the tabloids would have run the Trump story based solely on unsubstantiated documents like those that BuzzFeed/CNN had,” Maxine told the Observer. “The tabs get slammed a lot for ‘bullshit stories’ and I’ll admit there’s definitely more than a healthy degree of spin that goes into the general run-of-the-mill celeb fodder—the fighting, dating, breaking-up, pregnancy speculation, weight loss, feuding kind of everyday fare that makes-up the bulk of the supermarket weeklies.<div class="ad-wrapper ad-top-margin ad-incontent ad-mobile htlad-observer_article_instream_mobile_3" id="observer_article_instream_mobile_3"></div><div class="ad-wrapper ad-top-margin ad-desktop ad-incontent htlad-observer_article_instream_dsk_3" id="observer_article_instream_dsk_3"></div>
+<p>“But, if the tabs run anything that involves drugs, criminal activity, or extra-marital affairs, then, it’s going to have to be bang on the money—like, a dead cert.
+<p>“You’re looking at double, triple, sometimes even more, sourcing—each and every one backing up the story—signed statements, court documents, maybe on-the-record video interviews, photographic proof, and a whole ton of really solid, exhaustive reporting. Then, when an editor is fully convinced of the story’s validity, without even a shadow of doubt, the really hard work begins—getting it past legal.
+<p>“For obvious reasons, all the tabloid companies have an exhaustive legal process and a team of attorneys who work 24/7 assessing the potential legal risk of stories before they’re published— they want every i dotted and t crossed, and they want absolute, unquestionable certainty that sources are credible and valid, and reporting is rock solid, before they will even consider signing off on a huge, potentially highly litigious story. And if it involves a politician, or a billionaire? The next President of the United States? Well, then the legal ante is upped yet further.”<div class="ad-wrapper ad-top-margin ad-incontent ad-mobile htlad-observer_article_instream_mobile_4" id="observer_article_instream_mobile_4"></div><div class="ad-wrapper ad-top-margin ad-desktop ad-incontent htlad-observer_article_instream_dsk_4" id="observer_article_instream_dsk_4"></div>
+<p>As Page describes, the tabloids never would’ve run the BuzzFeed story because their rigorous reporting and legal process never would have allowed it. BuzzFeed itself, in a ludicrous headline, described that what it was publishing was &#8220;unverified&#8221; and &#8220;contains errors.&#8221; Nevertheless, the site, which has spent a fortune luring brand-name journalists from traditional news organizations in hopes of being taken seriously as a purveyor of fact, still ran with the story.
+<p>As the report began to fall apart, competitor news sites hammered away at BuzzFeed&#8217;s decision to publish. Even CNN, which opened the door by referring to the report but not citing it or publishing, upbraided BuzzFeed, took its would-be peer to task, with Jake Tapper calling BuzzFeed “irresponsible” for publishing &#8220;uncorroborated&#8221; information. He sizzled them by concluding, &#8220;That&#8217;s not what we do. We are in the business of sussing out what is true and false.”
+<p>So far, the single most damaging allegation in the dossier is the charge that Trump representatives secretly met with Kremlin officials, presumably to cook up ways to influence the election. Specifically, the dossier stipulated that Trump’s lawyer Michael Cohen met with Kremlin officials in Prague of 2016. It’s since been <a href="http://www.dailymail.co.uk/news/article-4109252/Trump-s-lawyer-Michael-Cohen-tweets-picture-cover-passport-says-s-NEVER-Prague-witnesses-say-saw-California-day-new-dossier-claims-meeting-Kremlin-officials-Czech-Republic.html">reported</a> that the Michael Cohen in the report isn’t the one who is Trump’s lawyer but a man from a different country with the same name. Trump&#8217;s Cohen went on Sean Hannity’s <a href="http://www.hannity.com/articles/hanpr-election-493995/trumps-attorney-cnn-and-buzzfeed-owe-15464196/">show</a> and said, &#8220;They claimed that they have photos of me with some Russian government people. I said, &#8216;Produce the photos&#8217; I’ve never been to Prague and I’ve never been to Russia.&#8221;<div class="ad-wrapper ad-top-margin ad-incontent ad-mobile htlad-observer_article_instream_mobile_5" id="observer_article_instream_mobile_5"></div><div class="ad-wrapper ad-top-margin ad-desktop ad-incontent htlad-observer_article_instream_dsk_5" id="observer_article_instream_dsk_5"></div>
+<p>The level of investigative journalism a tabloid undergoes in reporting a &#8220;take down&#8221; of a high-profile politician was best illustrated when <em>National Enquirer</em> broke the John Edwards-Rielle Hunter affair and the subsequent lovechild stories.
+<p>“That [story] actually came from a call in to the tip line at the <em>National Enquirer</em>,” Page explained. “A very good friend of mine, who is actually one of the best reporters I have ever known, happened to answer the call, and by the time he had finished speaking to the anonymous caller, his gut instinct told him it was likely true&#8230; But, the tabs aren’t going to run a story from just an anonymous call-in to the tip line. And, don’t forget, this was John Edwards, who at the time, was a strong favorite to win the upcoming Presidency.
+<p>“The <em>Enquirer</em> actually had a team of over 12 reporters working full time and tirelessly on the story, and it cost them an absolute fortune in resources and man power. They had reporters and photographers staking out both Edwards and Hunter, following their every move day and night, for weeks.<div class="ad-wrapper ad-top-margin ad-incontent ad-mobile htlad-observer_article_instream_mobile_6" id="observer_article_instream_mobile_6"></div><div class="ad-wrapper ad-top-margin ad-desktop ad-incontent htlad-observer_article_instream_dsk_6" id="observer_article_instream_dsk_6"></div>
+<p>“Evidence to back up the story was building by the day, and finally, bingo, one of the reporters followed Edwards to a hotel where he and Rielle were hooking up. Even then though, there had to be yet more reporting, tracking down and contacting friends, family, coworkers, neighbors, hotel staff—working them and working them until some would talk and give credible evidence to back up the story yet further.
+<p>“When the story finally broke, few, if any, of the major news outlets gave it any credibility, or even any notice, initially, because, well, <em>National Enquirer</em>. But, next came the <em>Enquirer</em>’s follow-up exclusive that Hunter was pregnant by Edwards, and then, there was no ignoring or denying it.”
+<p>Respected members of the media have criticized the recklessness of BuzzFeed’s actions. “Readers of this newspaper know well not to include me among Trump’s supporters,” <a href="http://nypost.com/2017/01/10/buzzfeeds-trump-report-takes-fake-news-to-a-new-level/">John Podhoretz wrote in the <em>New York Post</em></a>. “But the scurrilousness of what BuzzFeed has done here is so beyond the bounds of what is even remotely acceptable it should compel even those most outraged by Trump’s political excesses to come to his defense and to the defense of a few other people mentioned in these papers whose names are also dragged through the mud.”<div class="ad-wrapper ad-top-margin ad-incontent ad-mobile htlad-observer_article_instream_mobile_7" id="observer_article_instream_mobile_7"></div><div class="ad-wrapper ad-top-margin ad-desktop ad-incontent htlad-observer_article_instream_dsk_7" id="observer_article_instream_dsk_7"></div>
+<p>Rather than simply apologizing for the story—bad enough when it was merely unverified, but now being slowly debunked—BuzzFeed has instead been doubling down. BuzzFeed Editor <a href="http://money.cnn.com/2017/01/15/media/buzzfeed-ben-smith-trump-memo/">Ben Smith (an Observer alumnus) said he was “proud” to publish the Trump memos</a>.
+<p>&#8220;We thought that it was important, when you have a blanket claim like he was compromised by Russian intelligence, to share the details,&#8221; Smith told CNN on Sunday. &#8220;I think we are trying to best inform our audience, to be true to our audience, to treat our audience with respect.&#8221;
+<p>Page finds all of this very ironic considering that journalists at CNN used to bash the <em>Enquirer</em> for their reporting and questioned their journalism standards and ethics in the past.<div class="ad-wrapper ad-top-margin ad-incontent ad-mobile htlad-observer_article_instream_mobile_8" id="observer_article_instream_mobile_8"></div><div class="ad-wrapper ad-top-margin ad-desktop ad-incontent htlad-observer_article_instream_dsk_8" id="observer_article_instream_dsk_8"></div>
+<p>One journalist who previously worked with Smith at a publication neither still works for speculated to the Observer about Smith&#8217;s motives in publishing so recklessly. Asked what would have motivated Smith, regarded as a generally sober journalist who cut his teeth on politics as a reporter at the Observer and then <em>Politico</em>, he said Smith was &#8220;reeling&#8221; from high-profile personnel defections and &#8220;needed a win.&#8221;
+<p>In early October, CNN <a href="http://www.adweek.com/news/television/why-cnn-hired-buzzfeeds-top-political-reporters-and-what-it-says-about-buzzfeed-news-173878">hired away</a> BuzzFeed&#8217;s top four political reporters in one fell swoop, including high profile scoop guy, Andrew Kaczynski. It was a crushing blow coming at the very peak of the political season, and occurred just a couple months after CNN chief Jeff Zucker <a href="http://variety.com/2016/tv/news/jeff-zucker-cnn-fox-news-1201827824/">brutally dismissed</a> BuzzFeed (and Vice), <a href="http://variety.com/2016/tv/news/jeff-zucker-cnn-fox-news-1201827824/">saying,</a> &#8220;I don&#8217;t think Vice and BuzzFeed are legitimate news organizations. They are native advertising shops. We crush both of them.&#8221;
+<p>Former <em>Radar</em> editor Page found it rich for CNN to criticize BuzzFeed.<div class="ad-wrapper ad-top-margin ad-incontent ad-mobile htlad-observer_article_instream_mobile_9" id="observer_article_instream_mobile_9"></div><div class="ad-wrapper ad-top-margin ad-desktop ad-incontent htlad-observer_article_instream_dsk_9" id="observer_article_instream_dsk_9"></div>
+<p>“Ironically, I remember CNN  talking trash about the <em>Enquirer</em> [when the Edwards stories broke], slamming their ‘loose standards’ of reporting and ‘check book journalism,’&#8221; Page explains. “But that was way back in the 00’s, pre-Fox News’ total dominance in the market, and CNN was still viewed as a credible and real news outlet. Well, we all know what’s happened since then—and now, with an ever increasing desperation for ratings combined with the need to feed a relentless 24/7 news cycle, it appears the once high and mighty CNN’s journalistic standards and ethics have slipped to an all-time low as they turn to sensationalism over quality. And there sets the stage for stories that are unverified, speculative and unsubstantiated, being run as actual viable ‘news.&#8217;”
+<p>Trump has praised some tabloid publications—including <em>National Enquirer—</em>in the past for putting out solid reporting. He has <a href="http://thehill.com/blogs/ballot-box/presidential-races/274405-trump-national-enquirer-has-a-very-good-record-of-being">said the <em>Enquirer</em> has a “very good record for being right.</a>&#8221; As someone who worked there, I can back this up. In reality, the tabloids place a greater premium on accuracy and old-fashioned &#8220;make the call&#8221; reporting than many members of the mainstream media, including BuzzFeed and even CNN itself.
+		
+				<img itemprop="image" src="https://observer.com/wp-content/uploads/sites/2/2017/01/screen-shot-2017-01-17-at-9-57-35-am.png?w=970&#038;quality=80&#038;strip" alt="The Tabloids Never Would Have Run BuzzFeed&#8217;s Trump Dossier" style="display:none;width:0;">
+
+	</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+			</footer><!-- .entry-meta -->
+</article><!-- #post-## -->
+					
+
+	<div class="breadcrumbs">
+		<span class="before-text"> Filed Under:</span>
+		<a href="https://observer.com/media/">Media</a>, <a href="https://observer.com/politics/">Politics</a>, <a href="https://observer.com/innovation/">Innovation</a>, <a href="https://observer.com/person/donald-trump/">Donald Trump</a>, <a href="https://observer.com/tag/donald-trump/">donald trump</a>, <a href="https://observer.com/tag/cnn/">CNN</a>, <a href="https://observer.com/person/john-edwards/">John Edwards</a>, <a href="https://observer.com/tag/buzzfeed/">buzzfeed</a>, <a href="https://observer.com/tag/ben-smith/">ben smith</a>, <a href="https://observer.com/tag/national-enquirer/">national enquirer</a>	</div>
+
+
+
+		<div class="next-container">
+		
+			<ul>
+									<li>
+						<a class="more-from" href="https://observer.com/2001/12/tom-wolfe-on-the-city-of-change/"><strong>SEE ALSO</strong>: Tom Wolfe on the City of Change</a>
+					</li>
+							</ul>
+
+		
+		</div><!-- /.next-article-button-container -->
+
+	
+
+							</div>
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+	<div id="secondary" class="widget-area" role="complementary">
+
+		<div id="nyo-before-sidebar">
+					</div>
+
+        <!-- For the Home page -->
+        
+        <!-- For Article pages -->
+									<aside class="ad-widget">
+					
+  <!-- Hashtag Labs Ad observer_river -->
+  <div class="ad-wrapper ad-bottom-margin ad-river ad-mobile htlad-observer_river" id="observer_river"></div>
+					
+  <!-- Hashtag Labs Ad observer_right_rail -->
+  <div class="ad-wrapper ad-bottom-margin ad-desktop ad-right-rail htlad-observer_right_rail" id="observer_right_rail"></div>
+				</aside>
+										<div class="nyo-sidebar-desktop" id="nyo-sidebars">
+					<div class="sidebar-cls">
+			            										<div class="OUTBRAIN" data-src="https://observer.com/2017/01/national-enquirer-buzzfeed-ben-smith-trump-dossier/" data-widget-id="SB_1" data-ob-template="nyobserver"></div>
+										</div>
+				</div>
+						<div class="widget sticky-ad">
+					<div class="hc-sailthru-widget">
+		<div class="hc-sailthru-success">
+			<h4>Thanks for signing up!</h4>
+		</div>
+		<div class="hc-sailthru-inner">	
+			<div class="hc-sailthru-header">
+				<img itemprop="logo" src="https://observer.com/wp-content/themes/newyorkobserver-2014/images/observer-right-rail-newsletter_daily.png" alt="Observer Daily Newsletter Signup" /> 
+			</div>
+			<form id="sailthru-widget" method="post">
+				<h4>Stay Informed</h4>
+				<p>Get the latest in Arts, Entertainment and Innovation delivered to your inbox daily</p>
+				<div id="form-block">
+				    <input class="field-email form-items-col__item" name="sw-email" type="email" placeholder="enter your email address" />
+				    <button class="submit form-items-col__item form-button sailthru-wuidget-submit">Submit</button>
+				</div>
+			    <div id="response-result"></div>
+			    <small>By submitting your email address you agree to Observer's <a href="http://www.observermedia.com/privacy-policy" target="_blank">privacy policy</a> and <a href="http://www.observermedia.com/terms" target="_blank">terms of service</a></small>
+			</form>
+		</div>
+	</div>
+				
+  <!-- Hashtag Labs Ad observer_article -->
+  <div class="ad-wrapper ad-bottom-margin ad-desktop ad-right-rail htlad-observer_article" id="observer_article"></div>
+			</div>
+		
+        <!-- For Tag pages and child channel pages -->
+		
+	</div><!-- #secondary --></div>
+
+<!-- Outbrain -->
+<section class="nyo-break-article-wrap after">
+						<div class="OUTBRAIN" data-src="https://observer.com/2017/01/national-enquirer-buzzfeed-ben-smith-trump-dossier/" data-widget-id="AR_1" data-ob-template="nyobserver">
+			</section>
+
+
+	</div><!-- #content -->
+
+	
+	<footer id="colophon" class="site-footer " role="contentinfo">
+		<div class="inner-container">
+			<div class="top">
+				<span class="footer-logo">Observer</span>
+				<ul class="footer-channels">
+					<li><a href="http://observer.com/arts/">Arts</a></li>
+					<li><a href="http://observer.com/entertainment/">Entertainment</a></li>
+					<li><a href="http://observer.com/business/">Innovation</a></li>
+				</ul>
+			</div>
+			<div class="middle">
+				<div class="left">
+					<ul class="footer-global-middle">
+						<li><a href="http://observermedia.com/contact/">Contact</a></li>
+						<li><a href="https://observer.com/about/">About</a></li>
+						<li><a href="https://observer.com/advertise/">Advertise</a></li>
+						<li><a href="https://observer.com/subscribe/">Newsletters</a></li>
+						<li><a href="https://observer.com/sitemap/">Sitemap</a></li>
+					</ul>
+				</div>
+				<div class="right">
+					<ul class="social-icons color">
+						<li class="facebook">
+							<a target="_blank" data-label="facebook-footer" href="https://www.facebook.com/observer" target="_blank"><i class="icon icon-facebook"></i></a>
+						</li>
+						<li class="twitter">
+							<a target="_blank" data-label="twitter-footer" href="https://twitter.com/observer" target="_blank"><i class="icon icon-twitter"></i></a>
+						</li>
+						<li class="linkedin">
+							<a target="_blank" data-label="linkedin-footer" href="https://www.linkedin.com/company/observer-media" target="_blank"><i class="icon icon-linkedin"></i></a>
+						</li>
+						<li class="instagram">
+							<a target="_blank" data-label="instagram-footer" href="https://instagram.com/observer" target="_blank"><i class="icon icon-instagram"></i></a>
+						</li>
+												<li class="email"><a target="_blank" data-label="email-footer" href="m&#097;ilto&#058;e&#100;&#105;&#116;&#111;ri&#097;l&#064;&#111;b&#115;er&#118;&#101;&#114;&#046;&#099;&#111;&#109;?Subject=Feedback The Tabloids Never Would Have Run BuzzFeed&#8217;s Trump Dossier"><i class="icon icon-mail"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="bottom">
+				<div class="left">
+					<ul class="footer-global-bottom">
+						<li><a href="http://observermedia.com/privacy-policy">Privacy</a></li>
+						<li><a href="http://observermedia.com/terms">Terms</a></li>
+						<!-- OneTrust Settings -->
+						<li><!-- OneTrust Cookies Settings link start -->
+<a class="ot-sdk-link ot-sdk-show-settings" onClick="return false;" rel="nofollow" href="#">Cookie Settings</a>
+<!-- OneTrust Cookies Settings link end -->
+    </li>
+						<!-- OneTrust Do Not Sell -->
+						<li><!-- OneTrust Do Not Sell link start -->
+<a class="ot-button" rel="nofollow" href="https://privacyportal.onetrust.com/webform/8bf444f2-ddd6-41ff-8e24-b69ac0176e05/19c22396-023a-465c-a9c0-d9f831d1d9cd">Do not sell my data</a>
+<!-- OneTrust Do Not Sell link end -->
+    </li>
+					</ul>
+				</div>
+				<div class="right">
+					<div class="vip-powered">
+						Powered by <a href="https://wpvip.com/?utm_source=vip_powered_wpcom&#038;utm_medium=web&#038;utm_campaign=VIP%20Footer%20Credit&#038;utm_term=observer.com" rel="generator nofollow" class="powered-by-wpcom">WordPress.com VIP</a>					</div>
+				</div>
+			</div>
+
+		</div><!-- inner-container -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<div id="adb-notification" class="adb-notification">
+	<div class="message-container">
+		<div class="message" data-message="notify">
+			<div class="logo"></div>
+			<h3>We noticed you're using an ad blocker.</h3>
+			<p>We get it: you like to have control of your own internet experience.<br> But advertising revenue helps support our journalism.<br><br> To read our full stories, please turn off your ad blocker.<br>We'd really appreciate it.</p>
+			<a href="javascript:void(0);" id="adb-whitelist" class="adb-btn">How Do I Whitelist Observer?</a>
+		</div>
+		<div class="message" data-message="instructions">
+			<h3 class="larger">How Do I Whitelist Observer?</h3>
+			<p>Below are steps you can take in order to whitelist Observer.com on your browser:</p>
+
+			<h3>For Adblock:</h3>
+			<p>Click the AdBlock button on your browser and select <strong>Don't run on pages on this domain</strong>.</p>
+
+			<h3>For Adblock Plus on Google Chrome:</h3>
+			<p>Click the AdBlock Plus button on your browser and select <strong>Enabled on this site.</strong></p>
+
+			<h3>For Adblock Plus on Firefox:</h3>
+			<p>Click the AdBlock Plus button on your browser and select <strong>Disable on Observer.com.</strong></p>
+
+			<a href="javascript:void(0);" id="adb-reload" class="adb-link">Then Reload the Page</a>
+		</div>
+	</div>
+</div>
+
+<!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Daily_Dark-Mobile --><script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.campaign='x9wrdgrssorpg4wyrtdm';s.dataset.user='76685';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Ent_Dark-Mobile --><script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.campaign='dpbf5ra6urmy1fg8z0zq';s.dataset.user='76685';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Royals_Split-Mobile --><script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.campaign='dht17elzuynwijfnqjns';s.dataset.user='76685';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Lifestyle_Dark-Mobile --><script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.campaign='ey01xutw2zybwmenem1g';s.dataset.user='76685';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Arts_Split-Mobile --><script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.campaign='kvwglfb2tcp04p0krzjq';s.dataset.user='76685';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Tesla_Split-Mobile --><script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.campaign='z4aq0gucjaq8dqftvdti';s.dataset.user='76685';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Daily- Desktop - Split --><script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.campaign='ndzoqrnofumpgjuu4xuo';s.dataset.user='76685';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Intelligence Report_Elon - Desktop - Split --><script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.campaign='bj3semr1zxsgikohvvw3';s.dataset.user='76685';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Lifestyle- Split -Desktop --><script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.campaign='buxfn19eqiukfojyo0ap';s.dataset.user='76685';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Arts- Split - Desktop --><script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.campaign='gsac3sgdwcxkwh9hpelp';s.dataset.user='76685';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Entertainment- Split - Desktop --><script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.campaign='lhiblodqrrix4vz2alkx';s.dataset.user='76685';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Royal- Split - Desktop --><script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.campaign='qmm2xgn7ikun1mmq1m7b';s.dataset.user='76685';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Biz_Dark-Mobile --><script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.campaign='pc0y5i47x0rrtrfma8zf';s.dataset.user='76685';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Int. Report_Dark_Desktop --><script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.campaign='mfvod6ayy4eub72m7rtw';s.dataset.user='76685';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><!-- / OptinMonster --><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[^<>()[]</div><div class="omapi-shortcode-parsed omapi-encoded">[^&lt;&gt;()[]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z-0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z-0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[name=email-address]</div><div class="omapi-shortcode-parsed omapi-encoded">[name=email-address]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[^<>()[]</div><div class="omapi-shortcode-parsed omapi-encoded">[^&lt;&gt;()[]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z-0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z-0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[name=email-address]</div><div class="omapi-shortcode-parsed omapi-encoded">[name=email-address]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[^<>()[]</div><div class="omapi-shortcode-parsed omapi-encoded">[^&lt;&gt;()[]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z-0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z-0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[name=email-address]</div><div class="omapi-shortcode-parsed omapi-encoded">[name=email-address]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[^<>()[]</div><div class="omapi-shortcode-parsed omapi-encoded">[^&lt;&gt;()[]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z-0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z-0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[name=email-address]</div><div class="omapi-shortcode-parsed omapi-encoded">[name=email-address]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[^<>()[]</div><div class="omapi-shortcode-parsed omapi-encoded">[^&lt;&gt;()[]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z-0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z-0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[name=email-address]</div><div class="omapi-shortcode-parsed omapi-encoded">[name=email-address]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[^<>()[]</div><div class="omapi-shortcode-parsed omapi-encoded">[^&lt;&gt;()[]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z-0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z-0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[name=email-address]</div><div class="omapi-shortcode-parsed omapi-encoded">[name=email-address]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[^<>()[]</div><div class="omapi-shortcode-parsed omapi-encoded">[^&lt;&gt;()[]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z-0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z-0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[name=email-address]</div><div class="omapi-shortcode-parsed omapi-encoded">[name=email-address]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[^<>()[]</div><div class="omapi-shortcode-parsed omapi-encoded">[^&lt;&gt;()[]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z-0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z-0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[name=email-address]</div><div class="omapi-shortcode-parsed omapi-encoded">[name=email-address]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[^<>()[]</div><div class="omapi-shortcode-parsed omapi-encoded">[^&lt;&gt;()[]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z-0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z-0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[name=email-address]</div><div class="omapi-shortcode-parsed omapi-encoded">[name=email-address]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[^<>()[]</div><div class="omapi-shortcode-parsed omapi-encoded">[^&lt;&gt;()[]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z-0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z-0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[name=email-address]</div><div class="omapi-shortcode-parsed omapi-encoded">[name=email-address]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[^<>()[]</div><div class="omapi-shortcode-parsed omapi-encoded">[^&lt;&gt;()[]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z-0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z-0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[name=email-address]</div><div class="omapi-shortcode-parsed omapi-encoded">[name=email-address]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[^<>()[]</div><div class="omapi-shortcode-parsed omapi-encoded">[^&lt;&gt;()[]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z-0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z-0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[name=email-address]</div><div class="omapi-shortcode-parsed omapi-encoded">[name=email-address]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[^<>()[]</div><div class="omapi-shortcode-parsed omapi-encoded">[^&lt;&gt;()[]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z-0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z-0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[name=email-address]</div><div class="omapi-shortcode-parsed omapi-encoded">[name=email-address]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[^<>()[]</div><div class="omapi-shortcode-parsed omapi-encoded">[^&lt;&gt;()[]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z-0-9]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z-0-9]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[a-zA-Z]</div><div class="omapi-shortcode-parsed omapi-encoded">[a-zA-Z]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[name=email-address]</div><div class="omapi-shortcode-parsed omapi-encoded">[name=email-address]</div></div>		<script type="text/javascript">
+		var x9wrdgrssorpg4wyrtdm_shortcode = true;var dpbf5ra6urmy1fg8z0zq_shortcode = true;var dht17elzuynwijfnqjns_shortcode = true;var ey01xutw2zybwmenem1g_shortcode = true;var kvwglfb2tcp04p0krzjq_shortcode = true;var z4aq0gucjaq8dqftvdti_shortcode = true;var ndzoqrnofumpgjuu4xuo_shortcode = true;var bj3semr1zxsgikohvvw3_shortcode = true;var buxfn19eqiukfojyo0ap_shortcode = true;var gsac3sgdwcxkwh9hpelp_shortcode = true;var lhiblodqrrix4vz2alkx_shortcode = true;var qmm2xgn7ikun1mmq1m7b_shortcode = true;var pc0y5i47x0rrtrfma8zf_shortcode = true;var mfvod6ayy4eub72m7rtw_shortcode = true;		</script>
+		<script src='//ak.sail-horizon.com/spm/spm.v1.min.js?ver=5.5.1' id='personalize_js-js'></script>
+<script defer src='//observer.com/wp-content/themes/newyorkobserver-2014/assets/js/helpers.min.js?ver=01042021' id='observer-helpers-defer-js'></script>
+<script defer src='//observer.com/wp-content/themes/newyorkobserver-2014/assets/js/vendor/jquery.flexslider.min.js?ver=2.2.2' id='flexslider-defer-js'></script>
+<script defer src='//observer.com/wp-content/themes/newyorkobserver-2014/assets/js/theme.min.js?ver=1.2.0' id='observer-scripts-defer-js'></script>
+<script defer src='//observer.com/wp-content/themes/newyorkobserver-2014/assets/js/sailthru-widget.min.js?ver=1.1' id='sailthru-widget-defer-js'></script>
+<script nomodule src='//observer.com/wp-content/themes/newyorkobserver-2014/assets/js/vendor/stickyfill.min.js?ver=1.1.4' id='stickfill-nomodule-js'></script>
+<script id='jetpack-lazy-images-js-extra'>
+var jetpackLazyImagesL10n = {"loading_warning":"Images are still loading. Please cancel your print and try again."};
+</script>
+<script type='text/javascript' src='https://observer.com/_static/??-eJytjcENwjAMABciNagSpA/ELCGYyiGxo9gpKtPTB0IMwPdOuoNndVHYkA1KdzX3mVghodUQH24aRliQb9IgdJMSzCh+bQ6v1VEJMypo27gCbammGI2E5arYFmyuSl7vlPNQiIekO/jz9Ad9FpdyPhz3k/f+5Mf0Btv1VK4='></script>
+<script>(function(d){var s=d.createElement("script");s.type="text/javascript";s.src="https://a.omappapi.com/app/js/api.min.js";s.async=true;s.id="omapi-script";d.getElementsByTagName("head")[0].appendChild(s);})(document);</script><script defer src='https://observer.com/wp-includes/js/wp-embed.min.js?ver=5.6' id='wp-embed-js'></script>
+<script type='text/javascript' src='https://observer.com/wp-content/plugins/optinmonster/assets/js/helper.js?m=1611080032g'></script>
+<script src='https://stats.wp.com/e-202103.js' defer></script>
+<script>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:9.3.1',blog:'168679389',post:'891183',tz:'-5',srv:'observer.com'} ]);
+	_stq.push([ 'clickTrackerInit', '168679389', '891183' ]);
+</script>
+		<script type="text/javascript">var omapi_localized = { ajax: 'https://observer.com/wp-admin/admin-ajax.php?optin-monster-ajax-route=1', nonce: '95417a8b0f', slugs: {"x9wrdgrssorpg4wyrtdm":{"slug":"x9wrdgrssorpg4wyrtdm","mailpoet":false},"dpbf5ra6urmy1fg8z0zq":{"slug":"dpbf5ra6urmy1fg8z0zq","mailpoet":false},"dht17elzuynwijfnqjns":{"slug":"dht17elzuynwijfnqjns","mailpoet":false},"ey01xutw2zybwmenem1g":{"slug":"ey01xutw2zybwmenem1g","mailpoet":false},"kvwglfb2tcp04p0krzjq":{"slug":"kvwglfb2tcp04p0krzjq","mailpoet":false},"z4aq0gucjaq8dqftvdti":{"slug":"z4aq0gucjaq8dqftvdti","mailpoet":false},"ndzoqrnofumpgjuu4xuo":{"slug":"ndzoqrnofumpgjuu4xuo","mailpoet":false},"bj3semr1zxsgikohvvw3":{"slug":"bj3semr1zxsgikohvvw3","mailpoet":false},"buxfn19eqiukfojyo0ap":{"slug":"buxfn19eqiukfojyo0ap","mailpoet":false},"gsac3sgdwcxkwh9hpelp":{"slug":"gsac3sgdwcxkwh9hpelp","mailpoet":false},"lhiblodqrrix4vz2alkx":{"slug":"lhiblodqrrix4vz2alkx","mailpoet":false},"qmm2xgn7ikun1mmq1m7b":{"slug":"qmm2xgn7ikun1mmq1m7b","mailpoet":false},"pc0y5i47x0rrtrfma8zf":{"slug":"pc0y5i47x0rrtrfma8zf","mailpoet":false},"mfvod6ayy4eub72m7rtw":{"slug":"mfvod6ayy4eub72m7rtw","mailpoet":false}} };</script>
+				<script type="text/javascript">var omapi_data = {"wc_cart":[],"object_id":891183,"object_key":"post","object_type":"post","term_ids":[423819913,639079,423807301,423806441,196782,423868938,423868943,186,423869066,10907,352,423876138,423896456,213498167]};</script>
+		
+<div class="footer-ads">
+	
+  <!-- Hashtag Labs Ad observer_1x1 -->
+  <div class="ad-wrapper ad-out-of-page htlad-observer_1x1" id="observer_1x1"></div>
+	
+  <!-- Hashtag Labs Ad observer_1x1_2 -->
+  <div class="ad-wrapper ad-out-of-page htlad-observer_1x1_2" id="observer_1x1_2"></div>
+</div>
+
+  <!-- Hashtag Labs Ad observer_adhesion_mobile -->
+  <div class="ad-wrapper ad-adhesion ad-mobile htlad-observer_adhesion_mobile" id="observer_adhesion_mobile"></div>
+
+  <!-- Hashtag Labs Ad observer_adhesion -->
+  <div class="ad-wrapper ad-adhesion ad-desktop htlad-observer_adhesion" id="observer_adhesion"></div>
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"21151edd0b","applicationID":"312934720","transactionName":"M1AHMUpTCEpYBxVQCwoaMBdRHQ9XXQEZFxQMRQ==","queueTime":0,"applicationTime":337,"atts":"HxcQRwJJGxUbBUMDHxlI","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

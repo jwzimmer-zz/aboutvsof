@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html class="no-js mh-normal mh-one-sb wt-layout1" lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://theminaretonline.com/xmlrpc.php" />
+<title>An overview of the “Out of Shadows” documentary &#8211; Est. 1933</title>
+<script type="text/javascript">
+  WebFontConfig = {"google":{"families":["PT+Sans:r:latin,latin-ext","Quattrocento+Sans:r,i,b,bi:latin,latin-ext"]}};
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = 'https://s0.wp.com/wp-content/plugins/custom-fonts/js/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+	})();
+</script><style id="jetpack-custom-fonts-css">.wf-active body{font-family:"Quattrocento Sans",sans-serif}.wf-active h1{font-size:41.6px;font-size:2.6rem;font-style:normal;font-weight:400}.wf-active h2{font-size:31.2px;font-size:1.95rem;font-style:normal;font-weight:400}.wf-active h3{font-size:26px;font-size:1.625rem;font-style:normal;font-weight:400}.wf-active h4{font-size:23.4px;font-size:1.4625rem;font-style:normal;font-weight:400}.wf-active h5{font-size:20.8px;font-size:1.3rem;font-style:normal;font-weight:400}.wf-active h6{font-size:18.2px;font-size:1.1375rem;font-style:normal;font-weight:400}.wf-active h1, .wf-active h2, .wf-active h3, .wf-active h4, .wf-active h5, .wf-active h6, .wf-active .wf-active h1, .wf-active .wf-active h2, .wf-active .wf-active h3, .wf-active .wf-active h4, .wf-active .wf-active h5, .wf-active .wf-active h6{font-family:"PT Sans",sans-serif;font-weight:400;font-style:normal}</style>
+
+<!-- Async WordPress.com Remote Login -->
+<script id="wpcom_remote_login_js">
+var wpcom_remote_login_extra_auth = '';
+function wpcom_remote_login_remove_dom_node_id( element_id ) {
+	var dom_node = document.getElementById( element_id );
+	if ( dom_node ) { dom_node.parentNode.removeChild( dom_node ); }
+}
+function wpcom_remote_login_remove_dom_node_classes( class_name ) {
+	var dom_nodes = document.querySelectorAll( '.' + class_name );
+	for ( var i = 0; i < dom_nodes.length; i++ ) {
+		dom_nodes[ i ].parentNode.removeChild( dom_nodes[ i ] );
+	}
+}
+function wpcom_remote_login_final_cleanup() {
+	wpcom_remote_login_remove_dom_node_classes( "wpcom_remote_login_msg" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_key" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_validate" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_js" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_request_access_iframe" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_request_access_styles" );
+}
+
+// Watch for messages back from the remote login
+window.addEventListener( "message", function( e ) {
+	if ( e.origin === "https://r-login.wordpress.com" ) {
+		var data = {};
+		try {
+			data = JSON.parse( e.data );
+		} catch( e ) {
+			wpcom_remote_login_final_cleanup();
+			return;
+		}
+
+		if ( data.msg === 'LOGIN' ) {
+			// Clean up the login check iframe
+			wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_key" );
+
+			var id_regex = new RegExp( /^[0-9]+$/ );
+			var token_regex = new RegExp( /^.*|.*|.*$/ );
+			if (
+				token_regex.test( data.token )
+				&& id_regex.test( data.wpcomid )
+			) {
+				// We have everything we need to ask for a login
+				var script = document.createElement( "script" );
+				script.setAttribute( "id", "wpcom_remote_login_validate" );
+				script.src = '/remote-login.php?wpcom_remote_login=validate'
+					+ '&wpcomid=' + data.wpcomid
+					+ '&token=' + encodeURIComponent( data.token )
+					+ '&host=' + window.location.protocol
+						+ '//' + window.location.hostname;
+				document.body.appendChild( script );
+			}
+
+			return;
+		}
+
+		// Safari ITP, not logged in, so redirect
+		if ( data.msg === 'LOGIN-REDIRECT' ) {
+			window.location = 'https://wordpress.com/log-in?redirect_to=' + window.location.href;
+			return;
+		}
+
+		// Safari ITP, storage access failed, remove the request
+		if ( data.msg === 'LOGIN-REMOVE' ) {
+			var css_zap = 'html { -webkit-transition: margin-top 1s; transition: margin-top 1s; } /* 9001 */ html { margin-top: 0 !important; } * html body { margin-top: 0 !important; } @media screen and ( max-width: 782px ) { html { margin-top: 0 !important; } * html body { margin-top: 0 !important; } }';
+			var style_zap = document.createElement( 'style' );
+			style_zap.type = 'text/css';
+			style_zap.appendChild( document.createTextNode( css_zap ) );
+			document.body.appendChild( style_zap );
+
+			var e = document.getElementById( 'wpcom_request_access_iframe' );
+			e.parentNode.removeChild( e );
+
+			document.cookie = 'wordpress_com_login_access=denied; path=/; max-age=31536000';
+
+			return;
+		}
+
+		// Safari ITP
+		if ( data.msg === 'REQUEST_ACCESS' ) {
+			console.log( 'request access: safari' );
+
+			// Check ITP iframe enable/disable knob
+			if ( wpcom_remote_login_extra_auth !== 'safari_itp_iframe' ) {
+				return;
+			}
+
+			// If we are in a "private window" there is no ITP.
+			var private_window = false;
+			try {
+				var opendb = window.openDatabase( null, null, null, null );
+			} catch( e ) {
+				private_window = true;
+			}
+
+			if ( private_window ) {
+				console.log( 'private window' );
+				return;
+			}
+
+			var iframe = document.createElement( 'iframe' );
+			iframe.id = 'wpcom_request_access_iframe';
+			iframe.setAttribute( 'scrolling', 'no' );
+			iframe.setAttribute( 'sandbox', 'allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-top-navigation-by-user-activation' );
+			iframe.src = 'https://r-login.wordpress.com/remote-login.php?wpcom_remote_login=request_access&origin=' + encodeURIComponent( data.origin ) + '&wpcomid=' + encodeURIComponent( data.wpcomid );
+
+			var css = 'html { -webkit-transition: margin-top 1s; transition: margin-top 1s; } /* 9001 */ html { margin-top: 46px !important; } * html body { margin-top: 46px !important; } @media screen and ( max-width: 660px ) { html { margin-top: 71px !important; } * html body { margin-top: 71px !important; } #wpcom_request_access_iframe { display: block; height: 71px !important; } } #wpcom_request_access_iframe { border: 0px; height: 46px; position: fixed; top: 0; left: 0; width: 100%; min-width: 100%; z-index: 99999; background: #23282d; } ';
+
+			var style = document.createElement( 'style' );
+			style.type = 'text/css';
+			style.id = 'wpcom_request_access_styles';
+			style.appendChild( document.createTextNode( css ) );
+			document.body.appendChild( style );
+
+			document.body.appendChild( iframe );
+		}
+
+		if ( data.msg === 'DONE' ) {
+			wpcom_remote_login_final_cleanup();
+		}
+	}
+}, false );
+
+// Inject the remote login iframe after the page has had a chance to load
+// more critical resources
+window.addEventListener( "DOMContentLoaded", function( e ) {
+	var iframe = document.createElement( "iframe" );
+	iframe.style.display = "none";
+	iframe.setAttribute( "scrolling", "no" );
+	iframe.setAttribute( "id", "wpcom_remote_login_key" );
+	iframe.src = "https://r-login.wordpress.com/remote-login.php"
+		+ "?wpcom_remote_login=key"
+		+ "&origin=aHR0cHM6Ly90aGVtaW5hcmV0b25saW5lLmNvbQ%3D%3D"
+		+ "&wpcomid=98034053"
+		+ "&time=1611254872";
+	document.body.appendChild( iframe );
+}, false );
+</script>
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//utminaret.wordpress.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//wordpress.com' />
+<link rel="alternate" type="application/rss+xml" title="Est. 1933 &raquo; Feed" href="https://theminaretonline.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Est. 1933 &raquo; Comments Feed" href="https://theminaretonline.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Est. 1933 &raquo; An overview of the “Out of Shadows”&nbsp;documentary Comments Feed" href="https://theminaretonline.com/2020/05/02/an-overview-of-the-out-of-shadows-documentary/feed/" />
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+			<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s0.wp.com\/wp-includes\/js\/wp-emoji-release.min.js?m=1605528427h&ver=5.6-RC5-49737"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='all-css-0-1' href='https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/wpcom-smileys.css?m=1459241938h&cssminify=yes' type='text/css' media='all' />
+<link crossorigin="anonymous" rel='stylesheet' id='mh-open-sans-css'  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,800,700' media='all' />
+<link rel='stylesheet' id='all-css-2-1' href='https://s0.wp.com/_static/??-eJydkt1SAjEMhV/IEhlRhgvHZ0l3Qwn0b9qsiE9vdhcFRWHHm07Sni+ZpAf22TQpCkWB0JnsO8exQiGPQq3JqcqPbNbUege/Y553VGFLkrHZmSG7kH9qXaeppeL0pRC8rmbL2QJsx74F69PA24LlAFUOnibUGaiz9nhInRhXuP1viYLC0dU/8LPB+xH0PmSUXhGoZSRPQWXXsH1WxlibC9Vq9AzcBSMbBa/uWam+9LhhUOH3mxFliElY6foVXNQcW8GxM4SNCejwnSPdnnnPrSN1h6R89MlkZI0N2ZRGi9j0Np3UWNAVDKdoClZTw+jHfzHjTm62dJSM2kEtkOK3xKw9crmGFlIjOQ3d8DmntIdewvP8aX6/eFw+rObbD7uQU24=?cssminify=yes' type='text/css' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify {
+	text-align:justify;
+}
+</style>
+<link rel='stylesheet' id='print-css-3-1' href='https://s0.wp.com/wp-content/mu-plugins/global-print/global-print.css?m=1465851035h&cssminify=yes' type='text/css' media='print' />
+<style id='jetpack-global-styles-frontend-style-inline-css'>
+:root { --font-headings: unset; --font-base: unset; --font-headings-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; --font-base-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;}
+</style>
+<link rel='stylesheet' id='all-css-6-1' href='https://s0.wp.com/_static/??-eJxti8sKgCAQAH8oW6KHdoi+xcTUWF1pjX4/OnSIOg0DM3BmYSgVmwrEQ2Q8XEgMmbiIFXXYgb3eQ3IPa8Ncwf/FZIJGgeToLZ+peBstg+/AIS0a72COU9OPUg69atV2AWWKN+I=?cssminify=yes' type='text/css' media='all' />
+<script id='jetpack_related-posts-js-extra'>
+var related_posts_js_options = {"post_heading":"h4"};
+</script>
+<script id='scripts-js-extra'>
+var ajaxurl = "https:\/\/utminaret.wordpress.com\/wp-admin\/admin-ajax.php";
+var mh_magazine_js_strings = {"mobile_nav":"Navigation"};
+</script>
+<script id='wpcom-actionbar-placeholder-js-extra'>
+var actionbardata = {"siteID":"98034053","siteName":"Est. 1933","siteURL":"https:\/\/theminaretonline.com","icon":"<img alt='' src='https:\/\/s0.wp.com\/i\/logo\/wpcom-gray-white.png' class='avatar avatar-50' height='50' width='50' \/>","canManageOptions":"","canCustomizeSite":"","isFollowing":"","themeSlug":"premium\/mh-magazine","signupURL":"https:\/\/wordpress.com\/start\/","loginURL":"https:\/\/wordpress.com\/log-in?redirect_to=https%3A%2F%2Ftheminaretonline.com%2F2020%2F05%2F02%2Fan-overview-of-the-out-of-shadows-documentary%2F&signup_flow=account&domain=theminaretonline.com","themeURL":"","xhrURL":"https:\/\/theminaretonline.com\/wp-admin\/admin-ajax.php","nonce":"7588f75824","isSingular":"1","isFolded":"","isLoggedIn":"","isMobile":"","subscribeNonce":"<input type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"c7f346c3e6\" \/>","referer":"https:\/\/theminaretonline.com\/2020\/05\/02\/an-overview-of-the-out-of-shadows-documentary\/","canFollow":"1","feedID":"37495099","statusMessage":"","customizeLink":"https:\/\/utminaret.wordpress.com\/wp-admin\/customize.php?url=https%3A%2F%2Futminaret.wordpress.com%2F2020%2F05%2F02%2Fan-overview-of-the-out-of-shadows-documentary%2F","postID":"47563","shortlink":"https:\/\/wp.me\/p6Dl8p-cn9","canEditPost":"","editLink":"https:\/\/wordpress.com\/post\/theminaretonline.com\/47563","statsLink":"https:\/\/wordpress.com\/stats\/post\/47563\/theminaretonline.com","i18n":{"view":"View site","follow":"Follow","following":"Following","edit":"Edit","login":"Log in","signup":"Sign up","customize":"Customize","report":"Report this content","themeInfo":"Get theme: MH Magazine","shortlink":"Copy shortlink","copied":"Copied","followedText":"New posts from this site will now appear in your <a href=\"https:\/\/wordpress.com\/read\">Reader<\/a>","foldBar":"Collapse this bar","unfoldBar":"Expand this bar","editSubs":"Manage subscriptions","viewReader":"View site in Reader","viewReadPost":"View post in Reader","subscribe":"Sign me up","enterEmail":"Enter your email address","followers":"Join 355 other followers","alreadyUser":"Already have a WordPress.com account? <a href=\"https:\/\/wordpress.com\/log-in?redirect_to=https%3A%2F%2Ftheminaretonline.com%2F2020%2F05%2F02%2Fan-overview-of-the-out-of-shadows-documentary%2F&signup_flow=account&domain=theminaretonline.com\">Log in now.<\/a>","stats":"Stats"}};
+</script>
+<script type='text/javascript' src='https://s0.wp.com/_static/??-eJydkEESgjAMRS9kLY6OIwvHK3iFCgHCtGltUhVOb1XYsMNVJsl/P3+in0FVngRIdM/a+RtaUIkhmjbPFFLjtz1vdNYhVTbVwB9hf08Qh6nMgtnIJRVsapFYR7BGoFbBsyy6JSUduGweIjhMTrtOOdOaEQl+yWqIhGNch00BGwsvtpgt1uGCNJB5/HUzb0WGa+fFr+O5ihi+/7m48+5YlKdDWezL/g0qdqEM'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://utminaret.wordpress.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s0.wp.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress.com" />
+<link rel="canonical" href="https://theminaretonline.com/2020/05/02/an-overview-of-the-out-of-shadows-documentary/" />
+<link rel='shortlink' href='https://wp.me/p6Dl8p-cn9' />
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/?format=json&amp;url=https%3A%2F%2Ftheminaretonline.com%2F2020%2F05%2F02%2Fan-overview-of-the-out-of-shadows-documentary%2F&amp;for=wpcom-auto-discovery" /><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/?format=xml&amp;url=https%3A%2F%2Ftheminaretonline.com%2F2020%2F05%2F02%2Fan-overview-of-the-out-of-shadows-documentary%2F&amp;for=wpcom-auto-discovery" />
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="An overview of the “Out of Shadows” documentary" />
+<meta property="og:url" content="https://theminaretonline.com/2020/05/02/an-overview-of-the-out-of-shadows-documentary/" />
+<meta property="og:description" content="By Emily Cortes During quarantine times, people have tried to alleviate their boredom by binging T.V., watching TikTok for hours, catching up with their favorite YouTubers, and checking out some ne…" />
+<meta property="article:published_time" content="2020-05-02T05:54:04+00:00" />
+<meta property="article:modified_time" content="2020-05-02T05:54:05+00:00" />
+<meta property="og:site_name" content="Est. 1933" />
+<meta property="og:image" content="https://utminaret.files.wordpress.com/2020/05/youtube-667451_1280.png?w=1200" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="600" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:site" content="@wordpressdotcom" />
+<meta name="twitter:text:title" content="An overview of the “Out of Shadows”&nbsp;documentary" />
+<meta name="twitter:image" content="https://utminaret.files.wordpress.com/2020/05/youtube-667451_1280.png?w=640" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom" />
+
+<!-- End Jetpack Open Graph Tags -->
+<link rel="shortcut icon" type="image/x-icon" href="https://s0.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48" />
+<link rel="icon" type="image/x-icon" href="https://s0.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48" />
+<link rel="apple-touch-icon" href="https://s0.wp.com/i/webclip.png" />
+<link rel='openid.server' href='https://theminaretonline.com/?openidserver=1' />
+<link rel='openid.delegate' href='https://theminaretonline.com/' />
+<link rel="search" type="application/opensearchdescription+xml" href="https://theminaretonline.com/osd.xml" title="Est. 1933" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com" />
+		<style type="text/css">
+			.recentcomments a {
+				display: inline !important;
+				padding: 0 !important;
+				margin: 0 !important;
+			}
+
+			table.recentcommentsavatartop img.avatar, table.recentcommentsavatarend img.avatar {
+				border: 0px;
+				margin: 0;
+			}
+
+			table.recentcommentsavatartop a, table.recentcommentsavatarend a {
+				border: 0px !important;
+				background-color: transparent !important;
+			}
+
+			td.recentcommentsavatarend, td.recentcommentsavatartop {
+				padding: 0px 0px 1px 0px;
+				margin: 0px;
+			}
+
+			td.recentcommentstextend {
+				border: none !important;
+				padding: 0px 0px 2px 10px;
+			}
+
+			.rtl td.recentcommentstextend {
+				padding: 0px 10px 2px 0px;
+			}
+
+			td.recentcommentstexttop {
+				border: none;
+				padding: 0px 0px 0px 10px;
+			}
+
+			.rtl td.recentcommentstexttop {
+				padding: 0px 10px 0px 0px;
+			}
+		</style>
+		<meta name="application-name" content="Est. 1933" /><meta name="msapplication-window" content="width=device-width;height=device-height" /><meta name="msapplication-tooltip" content="The Minaret UT Student Newspaper" /><meta name="msapplication-task" content="name=Subscribe;action-uri=https://theminaretonline.com/feed/;icon-uri=https://s0.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=https://s0.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=https://s0.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=https://s0.wp.com/i/favicon.ico" /><meta name="description" content="By Emily Cortes During quarantine times, people have tried to alleviate their boredom by binging T.V., watching TikTok for hours, catching up with their favorite YouTubers, and checking out some new conspiracy theory documentaries. One documentary in particular, recently posted to YouTube under an account that shares the same name as the hour long film&hellip;" />
+<link rel="amphtml" href="https://theminaretonline.com/2020/05/02/an-overview-of-the-out-of-shadows-documentary/amp/"><style type="text/css" id="custom-colors-css">.footer-nav li a{color:#7c7c7c}.sl-caption{color:#7c7c7c}.footer-nav li:hover>a{color:#999}blockquote{color:#c9c9c9}.main-nav li a{color:#fff}.header-nav ul li:hover>ul a{color:#fff}.page-title-layout1{color:#fff}.page-numbers:hover,.current,a:hover .pagelink{color:#fff}.main-nav li:hover>a{color:#fff}.main-nav ul ul li:hover>a{color:#fff}.ticker-title{color:#fff}.post-tags a:hover{color:#fff}.main-nav ul li:hover>ul li:hover>a{color:#fff}.header-nav li:hover a{color:#fff}.header-nav ul li:hover>ul li:hover a{color:#fff}input[type=submit]{color:#fff}#cancel-comment-reply-link{color:#fff}.pagelink{color:#fff}.subheading{color:#fff}.wt-layout2 .widget-title-link,.wt-layout2 .widget-title-link:hover{color:#fff}.tagcloud a:hover,.sb-widget .tagcloud a:hover,.footer-widget .tagcloud a:hover{color:#fff}.main-nav ul li:hover>ul a{color:#fff}.carousel-layout1 .caption{color:#fff}footer{color:#fff}body{background-color:#991b1e}blockquote{background:#991b1e}</style>
+<!-- Your Google Analytics Plugin is missing the tracking ID -->
+</head>
+<body id="fixed-layout" class="post-template-default single single-post postid-47563 single-format-standard customizer-styles-applied highlander-enabled highlander-light custom-colors">
+<div class="container fixed-layout">
+<header class="header-wrap">
+		<a href="https://theminaretonline.com/" title="Est. 1933" rel="home">
+<div class="logo-wrap" role="banner">
+<img src="https://utminaret.files.wordpress.com/2017/02/cropped-screen-shot-2017-02-02-at-4-20-28-pm1.png" height="453" width="1500" alt="Est. 1933" />
+</div>
+</a>
+	<nav class="main-nav clearfix">
+		<div class="menu-menu-1-container"><ul id="menu-menu-1" class="menu"><li id="menu-item-47676" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47676"><a href="https://theminaretonline.com/category/covid-19/">COVID-19</a></li>
+<li id="menu-item-69" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-69"><a href="https://theminaretonline.com/category/news/">News</a>
+<ul class="sub-menu">
+	<li id="menu-item-47684" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47684"><a href="https://theminaretonline.com/category/sports/campus/">Campus</a></li>
+	<li id="menu-item-47689" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47689"><a href="https://theminaretonline.com/category/local/">local</a></li>
+	<li id="menu-item-47686" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47686"><a href="https://theminaretonline.com/category/news/national/">National</a></li>
+</ul>
+</li>
+<li id="menu-item-74" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-74"><a href="https://theminaretonline.com/category/ae/">A&amp;E</a>
+<ul class="sub-menu">
+	<li id="menu-item-119" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-119"><a href="https://theminaretonline.com/category/ae/art/">Art</a></li>
+	<li id="menu-item-120" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-120"><a href="https://theminaretonline.com/category/ae/food/">Food</a></li>
+	<li id="menu-item-121" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-121"><a href="https://theminaretonline.com/category/ae/movies/">Movies</a></li>
+	<li id="menu-item-123" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-123"><a href="https://theminaretonline.com/category/ae/music/">Music</a></li>
+	<li id="menu-item-126" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-126"><a href="https://theminaretonline.com/category/ae/tv/">TV</a></li>
+	<li id="menu-item-125" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-125"><a href="https://theminaretonline.com/category/ae/technology/">Technology</a></li>
+</ul>
+</li>
+<li id="menu-item-70" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-70"><a href="https://theminaretonline.com/category/opinion/">Opinion</a></li>
+<li id="menu-item-76" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-76"><a href="https://theminaretonline.com/category/sports/">Sports</a>
+<ul class="sub-menu">
+	<li id="menu-item-47683" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47683"><a href="https://theminaretonline.com/category/sports/campus/">Campus</a></li>
+	<li id="menu-item-47688" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47688"><a href="https://theminaretonline.com/category/local/">local</a></li>
+	<li id="menu-item-47685" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47685"><a href="https://theminaretonline.com/category/news/national/">National</a></li>
+</ul>
+</li>
+<li id="menu-item-329" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-329"><a href="https://theminaretonline.com/category/multimedia/">Multimedia</a></li>
+<li id="menu-item-48957" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-48957"><a href="https://theminaretonline.com/category/drug-magazine/">Drug Magazine</a></li>
+</ul></div>	</nav>
+			<nav class="info-nav clearfix">
+			<div class="menu-menu-2-container"><ul id="menu-menu-2" class="menu"><li id="menu-item-47692" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-47692"><a href="https://theminaretonline.com/">Home</a></li>
+<li id="menu-item-47693" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47693"><a href="https://theminaretonline.com/about/">About</a></li>
+<li id="menu-item-47691" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47691"><a href="https://theminaretonline.com/contact-us-2/">Contact Us</a></li>
+<li id="menu-item-47953" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47953"><a href="https://theminaretonline.com/meet-our-team/">Meet Our Team</a></li>
+<li id="menu-item-48082" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-48082"><a href="https://theminaretonline.com/category/download-issues/">Download Issues</a></li>
+</ul></div>		</nav>
+	</header>
+		<section class="news-ticker clearfix">
+			<div class="ticker-title">
+				Top News			</div>
+							<div class="ticker-content">
+					<ul id="ticker">
+													<li class="ticker-item">
+								<a href="https://theminaretonline.com/2019/02/14/lgbtq-students-push-for-accessible-gender-neutral-housing/" title="LGBTQ students push for accessible gender neutral&nbsp;housing">
+							<span class="meta ticker-item-meta">
+							February 14, 2019 in Campus // 							</span>
+							<span class="meta ticker-item-title">
+								LGBTQ students push for accessible gender neutral&nbsp;housing							</span>
+								</a>
+							</li>
+													<li class="ticker-item">
+								<a href="https://theminaretonline.com/2018/03/22/walk-the-talk-ut-demands-gun-reform/" title="Walk the Talk:  UT demands gun&nbsp;reform">
+							<span class="meta ticker-item-meta">
+							March 22, 2018 in News // 							</span>
+							<span class="meta ticker-item-title">
+								Walk the Talk:  UT demands gun&nbsp;reform							</span>
+								</a>
+							</li>
+													<li class="ticker-item">
+								<a href="https://theminaretonline.com/2018/03/01/jamal-nganga-he-radiated-positivity/" title="Jamal Nganga: &#8220;He radiated positivity&#8221;">
+							<span class="meta ticker-item-meta">
+							March 1, 2018 in News // 							</span>
+							<span class="meta ticker-item-title">
+								Jamal Nganga: &#8220;He radiated positivity&#8221;							</span>
+								</a>
+							</li>
+													<li class="ticker-item">
+								<a href="https://theminaretonline.com/2018/03/01/ut-becomes-floridas-first-university-to-be-acjs-certified/" title="UT becomes Florida’s first university to be ACJS&nbsp;certified">
+							<span class="meta ticker-item-meta">
+							March 1, 2018 in News // 							</span>
+							<span class="meta ticker-item-title">
+								UT becomes Florida’s first university to be ACJS&nbsp;certified							</span>
+								</a>
+							</li>
+													<li class="ticker-item">
+								<a href="https://theminaretonline.com/2018/02/15/ricardo-vega-a-rebel-without-a-cause-who-loved-life/" title="Ricardo Vega: a rebel without a cause who loved&nbsp;life">
+							<span class="meta ticker-item-meta">
+							February 15, 2018 in Cover // 							</span>
+							<span class="meta ticker-item-title">
+								Ricardo Vega: a rebel without a cause who loved&nbsp;life							</span>
+								</a>
+							</li>
+													<li class="ticker-item">
+								<a href="https://theminaretonline.com/2017/10/25/gun-show-prevails-despite-recent-tragedies/" title="Gun Show Prevails Despite Recent&nbsp;Tragedies">
+							<span class="meta ticker-item-meta">
+							October 25, 2017 in News // 							</span>
+							<span class="meta ticker-item-title">
+								Gun Show Prevails Despite Recent&nbsp;Tragedies							</span>
+								</a>
+							</li>
+													<li class="ticker-item">
+								<a href="https://theminaretonline.com/2017/10/19/new-marine-science-vessel-arrives-in-tampa/" title="New marine science vessel arrives in&nbsp;Tampa">
+							<span class="meta ticker-item-meta">
+							October 19, 2017 in Campus // 							</span>
+							<span class="meta ticker-item-title">
+								New marine science vessel arrives in&nbsp;Tampa							</span>
+								</a>
+							</li>
+													<li class="ticker-item">
+								<a href="https://theminaretonline.com/2017/10/12/fire-alarm-activated-in-morsani-twice-in-one-week/" title="Fire Alarm Activated in Morsani Twice in One&nbsp;Week">
+							<span class="meta ticker-item-meta">
+							October 12, 2017 in Campus // 							</span>
+							<span class="meta ticker-item-title">
+								Fire Alarm Activated in Morsani Twice in One&nbsp;Week							</span>
+								</a>
+							</li>
+													<li class="ticker-item">
+								<a href="https://theminaretonline.com/2017/10/05/peace-announces-2017-18-alternative-breaks/" title="PEACE Announces 2017-18 Alternative&nbsp;Breaks">
+							<span class="meta ticker-item-meta">
+							October 5, 2017 in Campus // 							</span>
+							<span class="meta ticker-item-title">
+								PEACE Announces 2017-18 Alternative&nbsp;Breaks							</span>
+								</a>
+							</li>
+													<li class="ticker-item">
+								<a href="https://theminaretonline.com/2017/09/28/faculty-sustainability-committee-addresses-recycling-controversy-on-campus/" title="Faculty Sustainability Committee Addresses Recycling Controversy on&nbsp;Campus">
+							<span class="meta ticker-item-meta">
+							September 28, 2017 in News // 							</span>
+							<span class="meta ticker-item-title">
+								Faculty Sustainability Committee Addresses Recycling Controversy on&nbsp;Campus							</span>
+								</a>
+							</li>
+													<li class="ticker-item">
+								<a href="https://theminaretonline.com/2020/11/13/drug-edition-fall-magazine-2020/" title="Drug Edition &#8211; Fall Magazine&nbsp;2020">
+							<span class="meta ticker-item-meta">
+							November 13, 2020 in Download Issues // 							</span>
+							<span class="meta ticker-item-title">
+								Drug Edition &#8211; Fall Magazine&nbsp;2020							</span>
+								</a>
+							</li>
+													<li class="ticker-item">
+								<a href="https://theminaretonline.com/2020/11/13/whippets-whip-its-or-laughing-gas-the-drug-ut-students-are-inhaling/" title="Whippets, Whip-Its, or Laughing Gas: The Drug UT Students are&nbsp;Inhaling">
+							<span class="meta ticker-item-meta">
+							November 13, 2020 in Drug Magazine // 							</span>
+							<span class="meta ticker-item-title">
+								Whippets, Whip-Its, or Laughing Gas: The Drug UT Students are&nbsp;Inhaling							</span>
+								</a>
+							</li>
+													<li class="ticker-item">
+								<a href="https://theminaretonline.com/2020/11/13/opioid-epidemic-falls-in-the-hands-of-purdue-pharma/" title="Opioid Epidemic Falls in the Hands of Purdue&nbsp;Pharma">
+							<span class="meta ticker-item-meta">
+							November 13, 2020 in Drug Magazine // 							</span>
+							<span class="meta ticker-item-title">
+								Opioid Epidemic Falls in the Hands of Purdue&nbsp;Pharma							</span>
+								</a>
+							</li>
+													<li class="ticker-item">
+								<a href="https://theminaretonline.com/2020/11/13/a-day-in-the-life-the-illegal-hustle-of-students/" title="A Day in the Life: The Illegal Hustle of&nbsp;Students">
+							<span class="meta ticker-item-meta">
+							November 13, 2020 in Drug Magazine // 							</span>
+							<span class="meta ticker-item-title">
+								A Day in the Life: The Illegal Hustle of&nbsp;Students							</span>
+								</a>
+							</li>
+													<li class="ticker-item">
+								<a href="https://theminaretonline.com/2020/11/13/adderall-a-problem-or-a-problem-solver/" title="Adderall: A Problem or a&nbsp;Problem-Solver?">
+							<span class="meta ticker-item-meta">
+							November 13, 2020 in Drug Magazine // 							</span>
+							<span class="meta ticker-item-title">
+								Adderall: A Problem or a&nbsp;Problem-Solver?							</span>
+								</a>
+							</li>
+																	</ul>
+				</div>
+					</section>
+	<div class="wrapper clearfix">
+	<div class="main">
+		<div class="content left"><nav class="breadcrumb"><span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://theminaretonline.com" itemprop="url"><span itemprop="title">Home</span></a></span> &raquo; <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://theminaretonline.com/category/opinion/" itemprop="url"><span itemprop="title">Opinion</span></a></span> &raquo; An overview of the “Out of Shadows”&nbsp;documentary</nav>
+<article id="post-47563" class="post-47563 post type-post status-publish format-standard has-post-thumbnail hentry category-opinion category-uncategorized tag-documentary tag-emily-cortes tag-out-of-the-shadows">
+	<header class="post-header">
+		<h1 class="entry-title">An overview of the “Out of Shadows”&nbsp;documentary</h1>
+		<p class="meta post-meta">Posted on <span class="updated">May 2, 2020</span>   in <a href="https://theminaretonline.com/category/opinion/" rel="category tag">Opinion</a>, <a href="https://theminaretonline.com/category/uncategorized/" rel="category tag">Uncategorized</a></p>
+	</header>
+		<div class="entry clearfix">
+		
+<div class="post-thumbnail">
+<a href="https://utminaret.files.wordpress.com/2020/05/youtube-667451_1280.png" rel="prettyPhoto"><img src="https://utminaret.files.wordpress.com/2020/05/youtube-667451_1280.png?w=620&h=264&crop=1" alt="" title="youtube-667451_1280" /></a>
+</div>
+		<p>By Emily Cortes</p>
+<p><span style="font-weight:400;">During quarantine times, people have tried to alleviate their boredom by binging T.V., watching TikTok for hours, catching up with their favorite YouTubers, and checking out some new conspiracy theory documentaries. One documentary in particular, recently posted to YouTube under an account that shares the same name as the hour long film itself, “OUT OF SHADOWS.”</span></p>
+<p><span style="font-weight:400;">The video accrued just over ten million views in a short 14 days. The people who uploaded the video left us only with “</span><a href="http://outofshadows.org/"><span style="font-weight:400;">outofshadows.org</span></a><span style="font-weight:400;">.&#8221; This website doesn’t offer much information about who the organization is or who it consists of besides those people featured in the documentary. This “church’s” aesthetic consists of the religious crosses placed on their website’s page, the discussion in the documentary of satanic rituals subliminally sent to the American public, and the narrator of the film, Mike Smith, explaining his personal religious awakening. </span></p>
+<p><span style="font-weight:400;">The documentary seemed to be broken up and separated into jumbled segments, jumping from topic to topic without concluding the preceding topic. This organization was confusing, however, I understand they were trying to pack a lot of information into the opening scenes. </span></p>
+<p><span style="font-weight:400;">Yes, the large Hollywood movies and mainstream media definitely is influenced by our American government, but not in the way you may think. Ever since radio, television, film, and then the internet became necessary for daily life, the government began to create laws to protect its citizens, consumers, and publishers. Over time, these laws have changed,adapting to current situations. </span></p>
+<p><span style="font-weight:400;">Many platforms will remove your content or suspend your account if you post something that doesn’t comply with their policy. We as Americans have freedom of speech protected under the first amendment, but these internet companies, websites, radio stations, and apps are private companies, who have a right also covered under the free speech clause. They can allow certain posts and decline others to protect the brand and image of the platform you are using. </span></p>
+<p><span style="font-weight:400;">For the most part, you can post almost anything to the internet and it will not be censored by the government. In fact, a lot of the things we post that we don’t want to last forever have a crazy way of multiplying before our eyes. It may be harder to get your post removed from the internet completely than it will be for you to post the content you want with risk of censorship.</span></p>
+<p><span style="font-weight:400;">I don’t believe the American government is telling Martin Scorsese and Quintin Tarantino what to create their films about, what to enhance, what to dull down, and how to edit. However, the government is very aware of how mainstream media appeals to all demographics, being an instant money maker, and the American government will support a big money maker, no matter what the product may be. Take cigarettes, legal marijuana, and decriminalized mushrooms, for example.</span></p>
+<p><span style="font-weight:400;">This documentary argues that the information and media the American people consume on a daily basis is poisoned by a satanic and anti-christ like cult group, consisting of celebrities and high up government officials to brainwash citizens without them ever detecting what’s being done to them. </span></p>
+<p><span style="font-weight:400;">Media is a tool people used to create conversations and inform others of what they may be ignorant to. I don’t think there is any good that comes out of censorship. People create media inspired by things they have already experienced in the world. If the content up for discussion seems too much for a general audience and may need to be censored, then we need to do a better job as a society to not let these very real experiences happen to people in real life. If these things didn’t happen in our world, there would be no reason to create media to get the story told. </span></p>
+<p><i>Emily Cortes can be reached at emily.cortes@spartans.ut.edu</i></p>
+<div id="jp-post-flair" class="sharedaddy sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-47563" class="share-twitter sd-button share-icon" href="https://theminaretonline.com/2020/05/02/an-overview-of-the-out-of-shadows-documentary/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-47563" class="share-facebook sd-button share-icon" href="https://theminaretonline.com/2020/05/02/an-overview-of-the-out-of-shadows-documentary/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-end"></li></ul></div></div></div><div class='sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-post-wrapper-98034053-47563-6009cc5814f59' data-src='//widgets.wp.com/likes/index.html?ver=20200826#blog_id=98034053&amp;post_id=47563&amp;origin=utminaret.wordpress.com&amp;obj_id=98034053-47563-6009cc5814f59&amp;domain=theminaretonline.com' data-name='like-post-frame-98034053-47563-6009cc5814f59'><h3 class='sd-title'>Like this:</h3><div class='likes-widget-placeholder post-likes-widget-placeholder' style='height: 55px;'><span class='button'><span>Like</span></span> <span class="loading">Loading...</span></div><span class='sd-text-color'></span><a class='sd-link-color'></a></div>
+<div id='jp-relatedposts' class='jp-relatedposts' >
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+</div></div>	</div>
+	<div class="post-tags clearfix"><ul><li><a href="https://theminaretonline.com/tag/documentary/" rel="tag">Documentary</a></li><li><a href="https://theminaretonline.com/tag/emily-cortes/" rel="tag">Emily cortes</a></li><li><a href="https://theminaretonline.com/tag/out-of-the-shadows/" rel="tag">out of the shadows</a></li></ul></div>	</article><nav class="section-title clearfix" role="navigation">
+<div class="post-nav left">
+<a href="https://theminaretonline.com/2020/05/01/u-s-racism-flares-up-during-covid-19/" rel="prev">&larr; Previous article</a></div>
+<div class="post-nav right">
+<a href="https://theminaretonline.com/2020/05/02/college-friendly-eats/" rel="next">Next article &rarr;</a></div>
+</nav>
+		</div>
+			<aside class="sidebar sb-right"><div id="search-6" class="sb-widget widget_search"><h4 class="widget-title">Search</h4><form role="search" method="get" id="searchform" action="https://theminaretonline.com/">
+    <fieldset>
+	<input type="text" value="To search, type and hit enter" onfocus="if (this.value == 'To search, type and hit enter') this.value = ''" name="s" id="s" />
+	<input type="submit" id="searchsubmit" value="" />
+    </fieldset>
+</form></div><div id="wpcom_instagram_widget-4" class="sb-widget widget_wpcom_instagram_widget"><h4 class="widget-title">MinaGram</h4><p>No Instagram images were found.</p></div><div id="twitter_timeline-2" class="sb-widget widget_twitter_timeline"><h4 class="widget-title">MinaTweet</h4><a class="twitter-timeline" data-height="400" data-theme="light" data-border-color="#e8e8e8" data-tweet-limit="2" data-lang="EN" data-partner="jetpack" data-widget-id="649354704263057408" href="https://twitter.com/649354704263057408">My Tweets</a></div><div id="facebook-likebox-4" class="sb-widget widget_facebook_likebox"><h4 class="widget-title"><a href="https://www.facebook.com/The-Minaret-9157028961/timeline/">MinaFace</a></h4>		<div id="fb-root"></div>
+		<div class="fb-page" data-href="https://www.facebook.com/The-Minaret-9157028961/timeline/" data-width="340"  data-height="432" data-hide-cover="false" data-show-facepile="false" data-tabs="timeline" data-hide-cta="false" data-small-header="false">
+		<div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/The-Minaret-9157028961/timeline/"><a href="https://www.facebook.com/The-Minaret-9157028961/timeline/">MinaFace</a></blockquote></div>
+		</div>
+		</div>	</aside>	</div>
+    </div>
+<footer class="row clearfix">
+			<div class="col-1-4 mq-footer">
+			<div id="wpcom_social_media_icons_widget-2" class="footer-widget footer-1 widget_wpcom_social_media_icons_widget"><h6 class="footer-widget-title">Connect with Us!</h6><ul><li><a href="https://www.facebook.com/The Minaret/" class="genericon genericon-facebook" target="_blank"><span class="screen-reader-text">View The Minaret&#8217;s profile on Facebook</span></a></li><li><a href="https://twitter.com/@Minaret/" class="genericon genericon-twitter" target="_blank"><span class="screen-reader-text">View @Minaret&#8217;s profile on Twitter</span></a></li><li><a href="https://www.instagram.com/theminaret/" class="genericon genericon-instagram" target="_blank"><span class="screen-reader-text">View theminaret&#8217;s profile on Instagram</span></a></li><li><a href="https://www.youtube.com/user/UTMinaret/" class="genericon genericon-youtube" target="_blank"><span class="screen-reader-text">View UTMinaret&#8217;s profile on YouTube</span></a></li></ul></div>		</div>
+				<div class="col-1-4 mq-footer">
+			<div id="widget_contact_info-5" class="footer-widget footer-2 widget_contact_info"><h6 class="footer-widget-title">Contact Us!</h6><div itemscope itemtype="http://schema.org/LocalBusiness"><div class="confit-address" itemscope itemtype="http://schema.org/PostalAddress" itemprop="address"><a href="https://maps.google.com/maps?z=16&#038;q=401%2Bw.%2Bkennedy%2Bblvd%2Btampa%2C%2Bfl%2B33606" target="_blank" rel="noopener noreferrer">401 W. Kennedy Blvd<br/>Tampa, Fl 33606<br/><br/></a></div><div class="confit-email"><a href="mailto:ut.minaret@gmail.com">ut.minaret@gmail.com</a></div></div></div>		</div>
+				<div class="col-1-4 mq-footer">
+			
+		<div id="recent-posts-7" class="footer-widget footer-3 widget_recent_entries">
+		<h6 class="footer-widget-title">Recent Posts</h6>
+		<ul>
+											<li>
+					<a href="https://theminaretonline.com/2020/11/13/drug-edition-fall-magazine-2020/">Drug Edition &#8211; Fall Magazine&nbsp;2020</a>
+									</li>
+											<li>
+					<a href="https://theminaretonline.com/2020/11/13/whippets-whip-its-or-laughing-gas-the-drug-ut-students-are-inhaling/">Whippets, Whip-Its, or Laughing Gas: The Drug UT Students are&nbsp;Inhaling</a>
+									</li>
+											<li>
+					<a href="https://theminaretonline.com/2020/11/13/opioid-epidemic-falls-in-the-hands-of-purdue-pharma/">Opioid Epidemic Falls in the Hands of Purdue&nbsp;Pharma</a>
+									</li>
+											<li>
+					<a href="https://theminaretonline.com/2020/11/13/a-day-in-the-life-the-illegal-hustle-of-students/">A Day in the Life: The Illegal Hustle of&nbsp;Students</a>
+									</li>
+											<li>
+					<a href="https://theminaretonline.com/2020/11/13/adderall-a-problem-or-a-problem-solver/">Adderall: A Problem or a&nbsp;Problem-Solver?</a>
+									</li>
+					</ul>
+
+		</div>		</div>
+				<div class="col-1-4 mq-footer">
+			<div id="wp_tag_cloud-3" class="footer-widget footer-4 wp_widget_tag_cloud"><h6 class="footer-widget-title">Tags</h6><div style="overflow:hidden"><a href="https://theminaretonline.com/tag/ae/" class="tag-cloud-link tag-link-8093 tag-link-position-1" style="font-size: 15.259259259259pt;" aria-label="A&amp;E (119 items)">A&amp;E</a>
+<a href="https://theminaretonline.com/tag/a_e2/" class="tag-cloud-link tag-link-476559571 tag-link-position-2" style="font-size: 15.950617283951pt;" aria-label="Arts &amp; Entertainment (130 items)">Arts &amp; Entertainment</a>
+<a href="https://theminaretonline.com/tag/news/" class="tag-cloud-link tag-link-103 tag-link-position-3" style="font-size: 19.58024691358pt;" aria-label="News (211 items)">News</a>
+<a href="https://theminaretonline.com/tag/commentary/" class="tag-cloud-link tag-link-271 tag-link-position-4" style="font-size: 15.086419753086pt;" aria-label="Opinion (117 items)">Opinion</a>
+<a href="https://theminaretonline.com/tag/opinion/" class="tag-cloud-link tag-link-352 tag-link-position-5" style="font-size: 11.456790123457pt;" aria-label="Opinion (71 items)">Opinion</a>
+<a href="https://theminaretonline.com/tag/sports/" class="tag-cloud-link tag-link-67 tag-link-position-6" style="font-size: 22pt;" aria-label="Sports (291 items)">Sports</a>
+<a href="https://theminaretonline.com/tag/tampa/" class="tag-cloud-link tag-link-71699 tag-link-position-7" style="font-size: 8pt;" aria-label="Tampa (45 items)">Tampa</a>
+<a href="https://theminaretonline.com/tag/university-of-tampa/" class="tag-cloud-link tag-link-2880756 tag-link-position-8" style="font-size: 12.148148148148pt;" aria-label="University of Tampa (79 items)">University of Tampa</a>
+<a href="https://theminaretonline.com/tag/ut/" class="tag-cloud-link tag-link-79293 tag-link-position-9" style="font-size: 18.716049382716pt;" aria-label="UT (188 items)">UT</a>
+<a href="https://theminaretonline.com/tag/ut-athletics/" class="tag-cloud-link tag-link-33456077 tag-link-position-10" style="font-size: 15.950617283951pt;" aria-label="UT athletics (130 items)">UT athletics</a></div></div>		</div>
+	</footer>
+<div class="copyright-wrap">
+	<p class="copyright">Copyright The Minaret 2015	
+	<a href="https://wordpress.com/?ref=footer_custom_svg" title="Create a website or blog at WordPress.com" rel="nofollow"><svg style="fill: currentColor; position: relative; top: 1px;" width="14px" height="15px" viewBox="0 0 14 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-labelledby="title" role="img">
+				<desc id="title">Create a website or blog at WordPress.com</desc>
+				<path d="M12.5225848,4.97949746 C13.0138466,5.87586309 13.2934037,6.90452431 13.2934037,7.99874074 C13.2934037,10.3205803 12.0351007,12.3476807 10.1640538,13.4385638 L12.0862862,7.88081544 C12.4453251,6.98296834 12.5648813,6.26504621 12.5648813,5.62667922 C12.5648813,5.39497674 12.549622,5.17994084 12.5225848,4.97949746 L12.5225848,4.97949746 Z M7.86730089,5.04801561 C8.24619178,5.02808979 8.58760099,4.98823815 8.58760099,4.98823815 C8.9267139,4.94809022 8.88671369,4.44972248 8.54745263,4.46957423 C8.54745263,4.46957423 7.52803983,4.54957381 6.86996227,4.54957381 C6.25158863,4.54957381 5.21247202,4.46957423 5.21247202,4.46957423 C4.87306282,4.44972248 4.83328483,4.96816418 5.17254589,4.98823815 C5.17254589,4.98823815 5.49358462,5.02808979 5.83269753,5.04801561 L6.81314716,7.73459399 L5.43565839,11.8651647 L3.14394256,5.04801561 C3.52312975,5.02808979 3.86416859,4.98823815 3.86416859,4.98823815 C4.20305928,4.94809022 4.16305906,4.44972248 3.82394616,4.46957423 C3.82394616,4.46957423 2.80475558,4.54957381 2.14660395,4.54957381 C2.02852925,4.54957381 1.88934333,4.54668493 1.74156477,4.54194422 C2.86690406,2.83350881 4.80113651,1.70529256 6.99996296,1.70529256 C8.638342,1.70529256 10.1302017,2.33173369 11.2498373,3.35765419 C11.222726,3.35602457 11.1962815,3.35261718 11.1683554,3.35261718 C10.5501299,3.35261718 10.1114609,3.89113285 10.1114609,4.46957423 C10.1114609,4.98823815 10.4107217,5.42705065 10.7296864,5.94564049 C10.969021,6.36482346 11.248578,6.90326506 11.248578,7.68133501 C11.248578,8.21992476 11.0413918,8.84503256 10.7696866,9.71584277 L10.1417574,11.8132391 L7.86730089,5.04801561 Z M6.99996296,14.2927074 C6.38218192,14.2927074 5.78595654,14.2021153 5.22195356,14.0362644 L7.11048207,8.54925635 L9.04486267,13.8491542 C9.05760348,13.8802652 9.07323319,13.9089317 9.08989995,13.9358945 C8.43574834,14.1661896 7.73285573,14.2927074 6.99996296,14.2927074 L6.99996296,14.2927074 Z M0.706448182,7.99874074 C0.706448182,7.08630113 0.902152921,6.22015756 1.25141403,5.43749503 L4.25357806,13.6627848 C2.15393732,12.6427902 0.706448182,10.4898387 0.706448182,7.99874074 L0.706448182,7.99874074 Z M6.99996296,0.999 C3.14016476,0.999 0,4.13905746 0,7.99874074 C0,11.8585722 3.14016476,14.999 6.99996296,14.999 C10.8596871,14.999 14,11.8585722 14,7.99874074 C14,4.13905746 10.8596871,0.999 6.99996296,0.999 L6.99996296,0.999 Z" id="wordpress-logo-simplified-cmyk" stroke="none" fill=“currentColor” fill-rule="evenodd"></path>
+			</svg></a>
+	
+	</p>
+</div>
+</div>
+<!--  -->
+	<div style="display:none">
+	</div>
+
+<script>
+window.addEventListener( "load", function( event ) {
+	var link = document.createElement( "link" );
+	link.href = "https://s0.wp.com/wp-content/mu-plugins/actionbar/actionbar.css?v=20201002";
+	link.type = "text/css";
+	link.rel = "stylesheet";
+	document.head.appendChild( link );
+
+	var script = document.createElement( "script" );
+	script.src = "https://s0.wp.com/wp-content/mu-plugins/actionbar/actionbar.js?v=20201002";
+	script.defer = true;
+	document.body.appendChild( script );
+} );
+</script>
+
+	
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/theminaretonline.com\/2020\/05\/02\/an-overview-of-the-out-of-shadows-documentary\/":47563};
+	</script>
+				<link rel='stylesheet' id='all-css-0-2' href='https://s0.wp.com/_static/??-eJzTLy/QTc7PK0nNK9HPLdUtyClNz8wr1i/PTElPLSnWTywtycgv0k0vykxBZuslFxfr6GPXmp6al1qUCZTAwQTptc+1NTQxNzC0NDQ3MsgCABHrMM4=?cssminify=yes' type='text/css' media='all' />
+<script id='comment-like-js-extra'>
+var comment_like_text = {"loading":"Loading..."};
+</script>
+<script id='jetpack-facebook-embed-js-extra'>
+var jpfbembed = {"appid":"249643311490","locale":"en_US"};
+</script>
+<script id='sharing-js-js-extra'>
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+</script>
+<script type='text/javascript' src='https://s0.wp.com/_static/??-eJyNkd1uwjAMhV+I4FWIiRu0R5nc1BSniRPilLI9/YKAC8SU7epYPv78I8OSjI1SSAo4hYHObCld1k5X8GylqCWQKo70i+tOM+Wvu6xZzkzLn2WOSkI7mUzK3y9dw2ySn0cWBc8TKVRopiPK4Ck3im0MoabMDXJXugddOLUmvEBPiQZ4vwE+WSwc0FIf42Qo9DT8lyoLl0LZFA7kWVpr4hBYTI8ZAmplamRKrp1aK14/Zw4eOYMeMbOMD63QR9h37133tt1uNjv3A50HxX8='></script>
+<script type='text/javascript'>
+var windowOpen;
+			document.body.addEventListener( 'click', function ( event ) {
+				if ( event.target && (
+					event.target.matches && event.target.matches( 'a.share-twitter' ) ||
+					event.target.msMatchesSelector && event.target.msMatchesSelector( 'a.share-twitter' )
+				) ) {
+					// If there's another sharing window open, close it.
+					if ( typeof windowOpen !== 'undefined' ) {
+						windowOpen.close();
+					}
+					windowOpen = window.open( event.target.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+					return false;
+				}
+			} );
+var windowOpen;
+			document.body.addEventListener( 'click', function ( event ) {
+				if ( event.target && (
+					event.target.matches && event.target.matches( 'a.share-facebook' ) ||
+					event.target.msMatchesSelector && event.target.msMatchesSelector( 'a.share-facebook' )
+				) ) {
+					// If there's another sharing window open, close it.
+					if ( typeof windowOpen !== 'undefined' ) {
+						windowOpen.close();
+					}
+					windowOpen = window.open( event.target.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+					return false;
+				}
+			} );
+</script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>		<iframe src='https://widgets.wp.com/likes/master.html?ver=20200826#ver=20200826' scrolling='no' id='likes-master' name='likes-master' style='display:none;'></iframe>
+		<div id='likes-other-gravatars'><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+<script src="//stats.wp.com/w.js?61" defer></script> <script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'98034053','blog_tz':'-5','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+_stq.push(['view', {'blog':'98034053','v':'wpcom','tz':'-5','user_id':'0','post':'47563','subd':'utminaret'}]);
+_stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1TaVhzUzFMbjdWNHpwZGhTayxPSUFCMGNrd29+Smw0TDhnZmRTK0hlRi9QSGh6bi9GXVhBJWIlZlR5U1JMLU8/MkNtblkvY1d1d05uYS5CX3NkdjUmcUZCJVAvR3dBbE13eltwQi0udV1HQUdIQy5hJnpiaERjWGN6RkFCbTJMWWQxVXFuM0xxdH56dS9yN3NLZzMmaytucWtqfEtaOWsmQS5EeXNHNWdYMSs1LzQtOTVdXVombXh+VUQ3QSxSejAzY3F8c10sV3hYQU9oL2ZULSxXMHZIS1haNlZubjl1aHBobGtjZTNnJS5hLEY2LUdZemV4eDNXXWlhTmJ2dVlkbTVmcV1aYUE4aWU2fGxheVZ4MjUuNS8tNDglbG5YVDhYUkVqQlFBUltdLnQrNEtmM1ctcnkvfDFQSl1rN3RmczE1MkF+OEdRVixEQX5ObWxmN2d8OWJ2S1dVMWFRd3hwdmZ+VlB6STc0VjVCfmM='}]);
+_stq.push([ 'clickTrackerInit', '98034053', '47563' ]);
+	</script>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:1px;width:1px;overflow:hidden;position:absolute;bottom:1px;" alt="" /></noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script></body>
+</html>
