@@ -44,7 +44,9 @@ def get_json(filename):
 
 class QModel():
     def __init__(self):
-        self.df = self.get_df()
+        self.t0 = get_json("uncleanqt0.json")
+        self.t1 = get_json("uncleanqt1.json")
+        self.df = self.get_df(self.t0,self.t1)
         self.run_model(self.df)
 
     def get_df(self,tokenlist0,tokenlist1,n=50):

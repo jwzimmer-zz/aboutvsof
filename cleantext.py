@@ -47,8 +47,8 @@ class Text():
     def __init__(self):
         self.filemap = get_json("q_filemap.json")
         self.t0, self.t1 = self.go_thru()
-        write_json(self.t0,"uncleanqt0.json")
-        write_json(self.t1,"uncleanqt1.json")
+        #write_json(self.t0,"uncleanqt0.json")
+        #write_json(self.t1,"uncleanqt1.json")
         
     def get_text_from_website(self,filename):
         soup = BeautifulSoup(open(filename,encoding="ISO-8859-1"),features="lxml")
@@ -65,9 +65,11 @@ class Text():
         for f in self.filemap:
             text = self.get_text_from_website(f)
             if self.filemap[f] == 0:
-                tokenlist0.append(text)
+                for i in text:
+                    tokenlist0.append(i)
             else:
-                tokenlist1.append(text)
+                for i in text:
+                    tokenlist1.append(i)
         return tokenlist0,tokenlist1
     
 Text() 
